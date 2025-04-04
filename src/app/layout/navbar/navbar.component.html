@@ -1,0 +1,129 @@
+<div class="bg-azul_secondary dark:bg-gray-800 shadow-lg relative z-40">
+  <nav class="container mx-auto px-4 py-4 flex items-center animate-fade-in">
+    <!-- Logo alineado a la izquierda -->
+    <a
+      routerLink="/"
+      class="text-2xl font-bold text-white dark:text-white transition-colors duration-300 mr-auto"
+    >
+      Logo
+    </a>
+
+    <!-- Enlaces alineados al centro (ocultos en móviles) -->
+    <div
+      [ngClass]="{ hidden: !isMenuOpen, flex: isMenuOpen }"
+      class="hidden md:flex space-x-6"
+    >
+      <a routerLink="/" class="relative text-white dark:text-gray-200 nav-link">
+        Inicio
+      </a>
+
+      <!-- Dropdown Nosotros -->
+      <!-- Contenedor principal del menú -->
+      <div class="relative group">
+        <button
+          class="relative text-white dark:text-gray-200 nav-link flex items-center"
+        >
+          Nosotros
+          <!-- <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-4 w-4 ml-1"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            />
+          </svg> -->
+        </button>
+
+        <!-- Menú desplegable que se mantiene visible -->
+        <div
+          class="absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
+        >
+          <a
+            routerLink="/historia"
+            class="rounded-md block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+          >
+            Historia
+          </a>
+          <a
+            routerLink="/objetivos"
+            class="rounded-md block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+          >
+            Objetivos
+          </a>
+          <a
+            routerLink="/equipotrabajo"
+            class="rounded-md block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+          >
+            Equipo de trabajo
+          </a>
+          <a
+            routerLink="/colaboracion"
+            class="rounded-md block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+          >
+            Colaboracion
+          </a>
+        </div>
+      </div>
+
+      <a
+        routerLink="/education"
+        class="relative text-white dark:text-gray-200 nav-link"
+      >
+        Educación y Divulgación
+      </a>
+      <a
+        routerLink="/team"
+        class="relative text-white dark:text-gray-200 nav-link"
+      >
+        Equipo
+      </a>
+      <a
+        routerLink="/contact"
+        class="relative text-white dark:text-gray-200 nav-link"
+      >
+        Contacto
+      </a>
+    </div>
+
+    <!-- Botón de modo oscuro y login alineados a la derecha -->
+    <div class="hidden md:flex items-center space-x-4 ml-auto">
+      <!-- <button
+        (click)="toggleDarkMode()"
+        class="text-gray-700 dark:text-gray-200 hover:text-indigo-800 dark:hover:text-white focus:outline-none transition-colors duration-300"
+      >
+        <span *ngIf="isDarkMode">🌙</span>
+        <span *ngIf="!isDarkMode">☀️</span>
+      </button> -->
+      <a
+        href="#"
+        class="bg-azul_primary text-white px-4 py-2 rounded-lg hover:bg-blue-900 transition-colors duration-300"
+        >Login</a
+      >
+    </div>
+
+    <!-- Botón de menú móvil -->
+    <button
+      (click)="toggleMobileMenu()"
+      class="md:hidden text-white focus:outline-none transition-colors duration-300"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      </svg>
+    </button>
+  </nav>
+</div>

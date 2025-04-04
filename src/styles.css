@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@layer tailwind-base, primeng, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+/* Cambiar para blanco  */
+/* html,
+body {
+  @apply bg-white text-black;
+} */
+@layer components {
+  .nav-link {
+    @apply relative overflow-hidden;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-current scale-x-0 origin-right transition-transform duration-300 ease-out;
+  }
+
+  .nav-link:hover::after {
+    @apply scale-x-100 origin-left;
+  }
+
+  .mobile-menu {
+    @apply transition-transform duration-300 ease-out;
+  }
+}
