@@ -109,35 +109,36 @@
           </ul>
         </nav>
       </div>
-      <div class="w-[460px] mx-auto grow">
+      <div class="w-full max-w-lg mx-auto grow px-4 sm:px-6">
         <div
-          class="mt-4 mb-2 font-medium text-4xl xl:mb-4 text-white text-wrap w-[480px]"
+          class="mt-4 mb-2 font-medium text-2xl sm:text-3xl md:text-4xl xl:mb-4 text-white text-center"
         >
-          Suscribete para recibir las ultimas actualizaciones
+          Suscríbete para recibir las últimas actualizaciones
         </div>
+
         <form
           method="POST"
           action="#"
-          class="mx-auto mt-6 mb-2 max-w-lg sm:rounded-xl sm:border sm:border-gray-100 sm:bg-white sm:p-4 sm:shadow"
+          class="mx-auto mt-6 mb-2 w-full sm:rounded-xl sm:border sm:border-gray-100 sm:bg-white sm:p-4 sm:shadow"
         >
           <div
             class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center"
           >
-            <div class="relative text-gray-500 sm:w-8/12">
+            <div class="relative text-gray-500 w-full sm:w-8/12">
               <input
                 type="email"
                 name="email"
                 id="email"
                 placeholder="Enter email address"
-                required=""
-                class="w-full cursor-text rounded-xl border-2 py-3 pr-4 text-base outline-none transition-all duration-200 ease-in-out sm:border-0 focus:border-transparent focus:ring"
+                required
+                class="w-full rounded-xl border-2 py-3 px-4 text-base outline-none transition-all duration-200 ease-in-out sm:border-0 focus:border-transparent focus:ring"
               />
             </div>
             <button
               type="submit"
               class="group flex items-center justify-center rounded-xl bg-blue-700 px-6 py-3 text-white transition w-full sm:w-auto"
             >
-              <span class="font-medium">Suscribete</span>
+              <span class="font-medium">Suscríbete</span>
             </button>
           </div>
         </form>

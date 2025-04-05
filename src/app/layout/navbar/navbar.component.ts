@@ -26,13 +26,33 @@ import { AvatarModule } from 'primeng/avatar';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent implements OnInit {
-  isMenuOpen = false; // Controla la visibilidad del menú lateral
+  //isMenuOpen = false; // Controla la visibilidad del menú lateral
   items: MenuItem[] | undefined;
+  isDarkMode = false;
+  isMobileMenuOpen = false;
 
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
+  isSubMenuOpen = false;
+
+  // toggleMenu() {
+  //   this.isMenuOpen = !this.isMenuOpen;
+  //   console.log(this.isMenuOpen);
+  // }
+
+  // toggleMobileMenu() {
+  //   this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  //   console.log(this.isMobileMenuOpen);
+  // }
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+
+    // Si se cierra el menú principal, también cierra el submenu
+    if (!this.isMobileMenuOpen) {
+      this.isSubMenuOpen = false;
+    }
   }
-
+  toggleSubMenu() {
+    this.isSubMenuOpen = !this.isSubMenuOpen;
+  }
   ngOnInit() {
     this.items = [
       {
@@ -66,8 +86,7 @@ export class NavbarComponent implements OnInit {
       },
     ];
   }
-  isDarkMode = false;
-  isMobileMenuOpen = false;
+
   constructor() {
     this.isDarkMode = localStorage.getItem('theme') === 'dark';
     this.applyTheme();
@@ -86,9 +105,6 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  toggleMobileMenu() {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
-  }
   // get darkModeIcon() {
   //   return this.isDarkMode
   //     ? `<svg xmlns='http://www.w3.org/2000/svg' class='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z' /></svg>`

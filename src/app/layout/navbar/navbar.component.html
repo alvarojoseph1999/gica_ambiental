@@ -1,6 +1,8 @@
 <div class="bg-azul_secondary dark:bg-gray-800 shadow-lg relative z-40">
-  <nav class="container mx-auto px-4 py-4 flex items-center animate-fade-in">
-    <!-- Logo alineado a la izquierda -->
+  <nav
+    class="container mx-auto px-4 py-4 flex items-center animate-fade-in justify-between"
+  >
+    <!-- Logo -->
     <a
       routerLink="/"
       class="dark:text-white transition-colors duration-300 mr-auto"
@@ -8,104 +10,72 @@
       <img src="assets/logo_gica.jpg" alt="" class="w-11 h-11" />
     </a>
 
-    <!-- Enlaces alineados al centro (ocultos en móviles) -->
-    <div
-      [ngClass]="{ hidden: !isMenuOpen, flex: isMenuOpen }"
-      class="hidden md:flex space-x-6"
-    >
-      <a routerLink="/" class="relative text-white dark:text-gray-200 nav-link">
-        Inicio
-      </a>
-
+    <!-- Menú de escritorio -->
+    <div class="hidden md:flex space-x-6">
+      <a routerLink="/" class="relative text-white dark:text-gray-200 nav-link"
+        >Inicio</a
+      >
       <!-- Dropdown Nosotros -->
-      <!-- Contenedor principal del menú -->
       <div class="relative group">
         <button
           class="relative text-white dark:text-gray-200 nav-link flex items-center"
         >
           Nosotros
-          <!-- <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4 ml-1"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-              clip-rule="evenodd"
-            />
-          </svg> -->
         </button>
-
-        <!-- Menú desplegable que se mantiene visible -->
         <div
           class="absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
         >
           <a
             routerLink="/historia"
-            class="rounded-md block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+            class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+            >Historia</a
           >
-            Historia
-          </a>
           <a
             routerLink="/objetivos"
-            class="rounded-md block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+            class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+            >Objetivos</a
           >
-            Objetivos
-          </a>
           <a
             routerLink="/equipotrabajo"
-            class="rounded-md block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+            class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+            >Equipo de trabajo</a
           >
-            Equipo de trabajo
-          </a>
           <a
             routerLink="/colaboracion"
-            class="rounded-md block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+            class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+            >Colaboración</a
           >
-            Colaboracion
-          </a>
         </div>
       </div>
 
       <a
         routerLink="/education"
         class="relative text-white dark:text-gray-200 nav-link"
+        >Educación y Divulgación</a
       >
-        Educación y Divulgación
-      </a>
       <a
         routerLink="/team"
         class="relative text-white dark:text-gray-200 nav-link"
+        >Equipo</a
       >
-        Equipo
-      </a>
       <a
         routerLink="/contact"
         class="relative text-white dark:text-gray-200 nav-link"
+        >Contacto</a
       >
-        Contacto
-      </a>
     </div>
 
-    <!-- Botón de modo oscuro y login alineados a la derecha -->
+    <!-- Botón Login visible siempre -->
     <div class="hidden md:flex items-center space-x-4 ml-auto">
-      <!-- <button
-        (click)="toggleDarkMode()"
-        class="text-gray-700 dark:text-gray-200 hover:text-indigo-800 dark:hover:text-white focus:outline-none transition-colors duration-300"
-      >
-        <span *ngIf="isDarkMode">🌙</span>
-        <span *ngIf="!isDarkMode">☀️</span>
-      </button> -->
       <a
         href="#"
         class="bg-azul_primary text-white px-4 py-2 rounded-lg hover:bg-blue-900 transition-colors duration-300"
-        >Login</a
       >
+        Login
+      </a>
     </div>
 
-    <!-- Botón de menú móvil -->
+    <!-- Botón menú móvil -->
     <button
       (click)="toggleMobileMenu()"
       class="md:hidden text-white focus:outline-none transition-colors duration-300"
@@ -126,4 +96,41 @@
       </svg>
     </button>
   </nav>
+
+  <!-- Menú móvil -->
+  <div *ngIf="isMobileMenuOpen" class="md:hidden px-4 pb-4 space-y-2">
+    <a routerLink="/" class="block text-white dark:text-gray-200">Inicio</a>
+    <!-- Dropdown Nosotros Móvil -->
+    <div>
+      <button
+        (click)="toggleSubMenu()"
+        class="w-full text-left text-white dark:text-gray-200"
+      >
+        Nosotros
+      </button>
+      <div *ngIf="isSubMenuOpen" class="ml-4 space-y-1">
+        <a routerLink="/historia" class="block text-gray-300">Historia</a>
+        <a routerLink="/objetivos" class="block text-gray-300">Objetivos</a>
+        <a routerLink="/equipotrabajo" class="block text-gray-300"
+          >Equipo de trabajo</a
+        >
+        <a routerLink="/colaboracion" class="block text-gray-300"
+          >Colaboración</a
+        >
+      </div>
+    </div>
+
+    <a routerLink="/education" class="block text-white dark:text-gray-200"
+      >Educación y Divulgación</a
+    >
+    <a routerLink="/team" class="block text-white dark:text-gray-200">Equipo</a>
+    <a routerLink="/contact" class="block text-white dark:text-gray-200"
+      >Contacto</a
+    >
+    <a
+      href="#"
+      class="block bg-azul_primary text-white px-4 py-2 rounded-lg hover:bg-blue-900 transition-colors duration-300"
+      >Login</a
+    >
+  </div>
 </div>
