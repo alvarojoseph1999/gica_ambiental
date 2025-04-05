@@ -21,17 +21,17 @@ export default class HomeComponent {
     {
       name: 'Ambienta Ambiental',
       role: 'Lorem ipsum dolor sit amet',
-      image: '/assets/Investigador.jpg',
+      image: 'assets/Investigador.jpg',
     },
     {
       name: 'Ambienta Ambiental',
       role: 'Lorem ipsum dolor sit amet',
-      image: '/assets/Investigador.jpg',
+      image: 'assets/Investigador.jpg',
     },
     {
       name: 'Ambienta Ambiental',
       role: 'Lorem ipsum dolor sit amet',
-      image: '/assets/Investigador.jpg',
+      image: 'assets/Investigador.jpg',
     },
   ];
 
@@ -43,23 +43,23 @@ export default class HomeComponent {
       title: "Don't destroy greenery and don’t spoil scenerycenery",
       description:
         'Lorem ipsum dolor sit amet, consectetur  adipiscing elitadipiscing.',
-      image: '/assets/logo_gica.jpg',
+      image: 'assets/logo_gica.jpg',
     },
     {
       title: 'Is climate change happening faster than expected?',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elitasdasd.',
-      image: '/assets/logo_gica.jpg',
+      image: 'assets/logo_gica.jpg',
     },
     {
       title: 'Top 10 facts about wind farms you didn’t ’t know know know know',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      image: '/assets/logo_gica.jpg',
+      image: 'assets/logo_gica.jpg',
     },
     {
       title: 'Our goal is to make water available for everyone',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      image: '/assets/logo_gica.jpg',
+      image: 'assets/logo_gica.jpg',
     },
   ];
 
