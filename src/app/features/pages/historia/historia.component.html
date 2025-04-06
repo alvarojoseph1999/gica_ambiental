@@ -1,6 +1,9 @@
-<div class="container mx-auto p-4 mt-10 mb-10 flex flex-col items-center">
+<!-- Contenedor Principal -->
+<div
+  class="container mx-auto px-4 sm:px-6 lg:px-8 mt-10 mb-10 flex flex-col items-center"
+>
   <!-- Sección Principal -->
-  <div class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-24">
+  <div class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-24">
     <!-- Sección Izquierda -->
     <div class="md:col-span-2 flex flex-col items-start">
       <h1 class="text-3xl font-bold">ChileMIO</h1>
@@ -8,41 +11,25 @@
         <img
           src="assets/gicaunam.png"
           alt="ChileMIO Image"
-          class="w-[650px] h-[553px] rounded-lg"
+          class="w-full max-w-[650px] h-auto rounded-lg lg:h-[400px]"
         />
       </div>
-      <br />
-      <p class="text-gray-700 text-lg max-w-4xl">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Quae ut provident aut,
-        doloremque temporibus perspiciatis rerum voluptatem dolorum aliquid
-        sequi illum est saepe voluptatum reprehenderit quaerat odio, amet
-        dignissimos corrupti? Lorem ipsum dolor sit amet, consectetur
-        adipisicing elit. Esse dolor quam dolorem animi voluptas eaque, nihil
-        amet architecto temporibus, repellat dolorum qui minima, id natus
-        assumenda saepe perferendis possimus rem! Lorem ipsum dolor sit amet,
-        consectetur adipisicing elit. Aliquid, unde. Sed quisquam, consequatur
-        deleniti quo alias perferendis, at excepturi eius sapiente, rerum ullam
-        in repudiandae qui repellendus. Modi, consequatur ipsam? Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Magni blanditiis
-        repellendus repellat laboriosam illum natus perspiciatis ipsam beatae
-        sequi saepe doloribus explicabo ullam dolor accusantium magnam quod,
-        fugit unde. Aliquid. Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Dolorum, voluptate. Lorem ipsum dolor sit amet consectetur
+      <p class="text-gray-700 text-base sm:text-lg max-w-4xl text-justify">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit...
       </p>
     </div>
 
-    <!-- Sección Derecha Flotante -->
+    <!-- Sección Derecha -->
     <div
-      class="bg-gray-100 p-6 rounded-lg shadow-lg w-full md:w-80 h-[550px] overflow-y-auto mt-[50px]"
+      class="bg-gray-100 p-6 rounded-lg shadow-lg w-full md:w-80 h-[550px] overflow-y-auto mt-10 md:mt-[50px]"
     >
       <h2 class="text-lg font-bold text-center text-blue-600">Noticias</h2>
       <p class="text-gray-600 text-center text-sm">Últimas novedades</p>
 
       <div class="mt-4 space-y-4">
-        <!-- Noticia 1 -->
+        <!-- Noticias -->
         <div class="bg-white p-4 rounded-lg shadow flex">
-          <div class="flex flex-col items-center w-20">
+          <div class="flex flex-col items-center w-20 flex-shrink-0">
             <img
               src="assets/gicaunam.png"
               alt="Evento"
@@ -58,9 +45,8 @@
           </div>
         </div>
 
-        <!-- Noticia 2 -->
         <div class="bg-white p-4 rounded-lg shadow flex">
-          <div class="flex flex-col items-center w-20">
+          <div class="flex flex-col items-center w-20 flex-shrink-0">
             <img
               src="assets/gicaunam.png"
               alt="Actualización"
@@ -76,9 +62,8 @@
           </div>
         </div>
 
-        <!-- Noticia 3 -->
         <div class="bg-white p-4 rounded-lg shadow flex">
-          <div class="flex flex-col items-center w-20">
+          <div class="flex flex-col items-center w-20 flex-shrink-0">
             <img
               src="assets/gicaunam.png"
               alt="Asociación"
@@ -98,90 +83,88 @@
   </div>
 </div>
 
-<!-- Sección Visión y Misión + Auspiciadores -->
-<div class="bg-azul_primary w-full h-[600px] pb-10 mb-16 flex items-center">
-  <div class="max-w-screen-lg mx-auto">
-    <!-- Sección Visión y Misión -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div class="p-6 text-start">
+<!-- Sección Visión, Misión y Auspiciadores -->
+<div class="bg-azul_primary w-full py-10 px-4 sm:px-6 lg:px-8 lg:h-[450px]">
+  <div class="max-w-screen-lg mx-auto space-y-10 pt-10">
+    <!-- Visión y Misión -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="p-4 text-start">
         <h2 class="text-lg font-bold text-center uppercase">Visión</h2>
-        <p class="mt-2 text-black">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
-          dolor sit amet consectetur adipisicing elit. Voluptates praesentium
-          maxime molestias obcaecati sunt, iste odit neque unde quo nam amet
-          pariatur debitis nisi eius, odio provident minima quia quae!
+        <p class="mt-2 text-black text-justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit...
         </p>
       </div>
-      <div class="p-6 text-start">
+      <div class="p-4 text-start">
         <h2 class="text-lg font-bold text-center uppercase">Misión</h2>
-        <p class="mt-2 text-black">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum
-          dolor sit amet consectetur adipisicing elit. Pariatur possimus modi
-          aut excepturi repudiandae porro provident perferendis ipsam nihil
-          obcaecati quisquam, odit consequatur laboriosam maxime officiis,
-          beatae illum dolores. Natus.
+        <p class="mt-2 text-black text-justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit...
         </p>
       </div>
     </div>
-    <!-- Sección Auspiciadores -->
-    <div class="mt-10">
+
+    <!-- Auspiciadores -->
+    <div>
       <p
-        class="text-black font-semibold uppercase tracking-wide flex items-center"
+        class="text-black font-semibold uppercase tracking-wide flex items-center mb-4"
       >
-        Auspiciadores
-        <span class="w-full h-[2px] bg-black ml-2"></span>
+        Auspiciadores <span class="w-full h-[2px] bg-black ml-2"></span>
       </p>
       <div
-        class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-4 justify-items-center"
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 justify-items-center"
       >
-        <div class="flex flex-row items-center">
+        <!-- Repetir Auspiciadores -->
+        <div class="flex items-center">
           <img
             src="assets/Badge-AluraFlix.png"
-            alt="Logo 1"
-            class="h-16 w-16 mr-2"
+            alt="Logo"
+            class="h-14 w-14 mr-2"
           />
-          <span class="text-gray-500 text-[18px] font-bold">Auspiciador 1</span>
+          <span class="text-gray-500 text-base font-bold">Auspiciador 1</span>
         </div>
-        <div class="flex flex-row items-center">
+        <!-- Duplicar para los demás auspiciadores -->
+        <div class="flex items-center">
           <img
             src="assets/Badge-AluraFlix.png"
-            alt="Logo 2"
-            class="h-16 w-16 mr-2"
+            alt="Logo"
+            class="h-14 w-14 mr-2"
           />
-          <span class="text-gray-500 text-[18px] font-bold">Auspiciador 2</span>
+          <span class="text-gray-500 text-base font-bold">Auspiciador 2</span>
         </div>
-        <div class="flex flex-row items-center">
+        <div class="flex items-center">
           <img
             src="assets/Badge-AluraFlix.png"
-            alt="Logo 3"
-            class="h-16 w-16 mr-2"
+            alt="Logo"
+            class="h-14 w-14 mr-2"
           />
-          <span class="text-gray-500 text-[18px] font-bold">Auspiciador 3</span>
+          <span class="text-gray-500 text-base font-bold">Auspiciador 3</span>
         </div>
-        <div class="flex flex-row items-center">
+        <div class="flex items-center">
           <img
             src="assets/Badge-AluraFlix.png"
-            alt="Logo 4"
-            class="h-16 w-16 mr-2"
+            alt="Logo"
+            class="h-14 w-14 mr-2"
           />
-          <span class="text-gray-500 text-[18px] font-bold">Auspiciador 4</span>
+          <span class="text-gray-500 text-base font-bold">Auspiciador 4</span>
         </div>
-        <div class="flex flex-row items-center">
+        <div class="flex items-center">
           <img
             src="assets/Badge-AluraFlix.png"
-            alt="Logo 5"
-            class="h-16 w-16 mr-2"
+            alt="Logo"
+            class="h-14 w-14 mr-2"
           />
-          <span class="text-gray-500 text-[18px] font-bold">Auspiciador 5</span>
+          <span class="text-gray-500 text-base font-bold">Auspiciador 5</span>
         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- Seccion Historia -->
-<div class="flex items-center justify-center min-h-screen p-10">
+
+<!-- Sección Historia -->
+<div
+  class="flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 py-10"
+>
   <div
-    class="relative w-[1357px] h-[700px] rounded-lg shadow-lg overflow-hidden"
+    class="relative w-full max-w-7xl rounded-lg shadow-lg overflow-hidden lg:h-[550px]"
   >
     <img
       src="assets/gicaunam.png"
@@ -191,32 +174,22 @@
     <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
 
     <div
-      class="relative z-20 flex flex-col items-center justify-center h-full p-8"
+      class="relative z-20 flex flex-col items-center justify-center h-full p-6 sm:p-8"
     >
       <div
-        class="flex flex-col md:flex-row items-center justify-center text-left p-4 w-full gap-8"
+        class="flex flex-col md:flex-row items-center justify-center w-full gap-8"
       >
-        <div class="flex-1 p-4">
-          <h2 class="text-3xl font-bold text-white text-center mb-8">
-            Chi Siamo
-          </h2>
-          <p class="text-white">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Deserunt placeat magnam
-            nam! Ea dolor, dolorum accusantium corrupti unde culpa nostrum quia
-            consequatur maxime quas! Adipisci molestias eos amet dolore
-            expedita! Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Asperiores voluptas obcaecati, sunt id mollitia laboriosam ab alias
-            cupiditate doloremque quasi nulla nesciunt magnam minima. Voluptas
-            velit perspiciatis dolorum ipsam odit.
+        <div class="flex-1 text-center md:text-left">
+          <h2 class="text-3xl font-bold text-white mb-4">Chi Siamo</h2>
+          <p class="text-white text-justify">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
           </p>
         </div>
-
-        <div class="flex-1 p-4 flex justify-center">
+        <div class="flex-1 flex justify-center mt-6 md:mt-0">
           <img
             src="assets/gicaunam.png"
             alt="Il nostro team"
-            class="shadow-md w-full h-96 max-w-md rounded-lg"
+            class="shadow-md w-full max-w-xs sm:max-w-md h-auto rounded-lg"
           />
         </div>
       </div>

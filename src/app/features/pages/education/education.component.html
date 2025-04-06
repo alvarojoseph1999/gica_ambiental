@@ -1,79 +1,57 @@
 <div class="container mx-auto p-4 mt-10 mb-10 flex flex-col items-center">
-  <!-- Sección Principal -->
-  <div class="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-24">
+  <!-- Grid principal con orden responsivo -->
+  <div
+    class="w-full max-w-7xl grid grid-cols-1 min-[1100px]:grid-cols-[3fr_1fr] gap-12 items-start"
+  >
     <!-- Sección Izquierda -->
-    <div class="md:col-span-2 flex flex-col items-start">
+    <div class="order-2 min-[1100px]:order-1 flex flex-col items-start">
       <p class="tracking-wide uppercase flex flex-col text-3xl font-bold">
-        <span class="w-[100%] h-[2px] bg-black mb-2"></span>
+        <span class="w-full h-[2px] bg-black mb-2"></span>
         ChileMIO
       </p>
-      <!-- <h1 class="text-3xl font-bold">ChileMIO</h1> -->
+
       <div class="w-full flex justify-center my-4 mt-8">
         <img
           src="assets/gicaunam.png"
           alt="ChileMIO Image"
-          class="w-[650px] h-[553px] rounded-lg"
+          class="w-full max-w-[750px] h-auto rounded-lg lg:h-[520px]"
         />
       </div>
-      <br />
 
-      <p class="text-gray-700 text-lg max-w-4xl">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        varius enim... Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Perferendis nisi, maiores saepe veritatis consectetur illo ad voluptatem
-        enim aliquid distinctio, atque rem! Dolor earum voluptatum doloremque!
-        Impedit veniam quia rem. Lorem ipsum dolor sit amet consectetur,
-        adipisicing elit. Dolor, velit. Labore atque placeat esse facilis
-        deleniti natus beatae delectus libero reiciendis eius, explicabo ut,
-        tenetur, voluptas a! Esse, corporis aliquam? Lorem ipsum dolor sit amet
-        consectetur adipisicing elit. Fuga laudantium optio deleniti recusandae
-        minima velit repudiandae. Voluptatum ad animi vitae natus fugit dolore
-        molestiae dicta sapiente, qui error doloremque tempora!lorem Lorem ipsum
-        dolor sit amet consectetur, adipisicing elit. Expedita hic beatae ullam
-        odit nesciunt, nisi rerum ducimus doloribus dolorem, aut dolores et
-        obcaecati eos nam aperiam consequatur, alias voluptatibus iure. Lorem
-        ipsum, dolor sit amet consectetur adipisicing elit. Repellat neque
-        voluptatem eligendi quo blanditiis odit vitae libero consequuntur
-        consectetur quae, nobis sapiente? Laboriosam quibusdam fuga quis quae
-        quam repellendus facere. consectetur adipisicing elit. Repellat neque
-        voluptatem eligendi quo blanditiis odit vitae libero consequuntur
-        consectetur quae, nobis sapiente? Laboriosam quibusdam fuga quis quae
-        quam repellendus facere.
+      <p class="text-gray-700 text-lg mt-5 sm::pl-10 sm:pr-10">
+        <!-- Tu texto largo aquí -->
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Praesentium excepturi,
+        aperiam molestias ipsam nulla asperiores expedita alias repellendus
+        assumenda harum odit natus tempore modi, possimus cupiditate doloremque!
+        Iusto, blanditiis laboriosam? Lorem ipsum dolor sit amet consectetur,
+        adipisicing elit. Quas deserunt architecto cumque quae modi vero dolores
+        repellendus et voluptate illum ad quod dignissimos, neque voluptatum
+        omnis placeat? Commodi, consequuntur nihil!lorem Lorem ipsum dolor sit
+        amet consectetur adipisicing elit. Et vel quasi ullam libero quia
+        quaerat dolore placeat consequuntur vitae obcaecati, numquam totam. Esse
+        voluptatum tempora recusandae dignissimos sapiente, optio accusamus!
       </p>
     </div>
 
     <!-- Sección Derecha Flotante -->
-    <div class="bg-gray-100 p-6 rounded-lg shadow-lg md:self-start mt-14 w-96">
+    <div
+      class="order-3 min-[1100px]:order-2 bg-gray-100 p-6 rounded-lg shadow-lg w-full max-w-sm mx-auto lg:mt-[75px]"
+    >
       <h2 class="text-xl font-bold text-center">ChileMIO</h2>
       <p class="text-gray-600 text-center">Descripción: Lorem Lorem Lorem</p>
-      <ul class="mt-4 space-y-2 ml-5 text-start">
-        <li>
-          <strong>Publico objetivo: <br /></strong> lorem lorem lorem
-        </li>
-        <li>
-          <strong>Duración: <br /> </strong> lorem lorem lorem
-        </li>
-        <li>
-          <strong>N° Participantes:<br /> </strong> lorem lorem lorem
-        </li>
-        <li>
-          <strong>Requerimientos:<br /> </strong> lorem lorem lorem
-        </li>
-        <li>
-          <strong>Contacto:<br /> </strong> lorem lorem lorem
-        </li>
-        <li>
-          <strong>Correo Electrónico:<br /> </strong> lorem lorem lorem
-        </li>
-        <li>
-          <strong>Teléfono:<br /> </strong> lorem lorem lorem
-        </li>
-        <li>
-          <strong>Sitio Web:<br /> </strong> lorem lorem lorem
-        </li>
+      <ul class="mt-4 space-y-2 text-start">
+        <li><strong>Publico objetivo:</strong> lorem lorem lorem</li>
+        <li><strong>Duración:</strong> lorem lorem lorem</li>
+        <li><strong>N° Participantes:</strong> lorem lorem lorem</li>
+        <li><strong>Requerimientos:</strong> lorem lorem lorem</li>
+        <li><strong>Contacto:</strong> lorem lorem lorem</li>
+        <li><strong>Correo Electrónico:</strong> lorem lorem lorem</li>
+        <li><strong>Teléfono:</strong> lorem lorem lorem</li>
+        <li><strong>Sitio Web:</strong> lorem lorem lorem</li>
       </ul>
       <p class="font-semibold tracking-wide uppercase flex items-center mt-4">
-        <span class="w-[100%] h-[2px] bg-black mr-2"></span>
+        <span class="w-full h-[2px] bg-black mr-2"></span>
       </p>
       <div class="mt-4 flex justify-start space-x-4">
         <a href="#" class="text-black text-2xl"
