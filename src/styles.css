@@ -36,3 +36,275 @@ body {
     @apply transition-transform duration-300 ease-out;
   }
 }
+
+/* Cambiar para blanco  */
+/* @layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    @apply border-gray-200; 
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  body {
+    @apply relative text-base font-normal font-outfit z-1 bg-gray-50;
+  }
+} */
+
+/* Cambia de color el logo img de sidebar */
+
+/* .filter-blue {
+  filter: brightness(0) saturate(100%) invert(23%) sepia(99%) saturate(648%)
+    hue-rotate(188deg) brightness(96%) contrast(93%);
+}
+
+.filter-gray {
+  filter: brightness(0) saturate(100%) invert(74%) sepia(0%) saturate(0%)
+    hue-rotate(163deg) brightness(91%) contrast(86%);
+}
+
+.group-hover\:filter-blue-hover:hover {
+  filter: brightness(0) saturate(100%) invert(41%) sepia(83%) saturate(434%)
+    hue-rotate(189deg) brightness(100%) contrast(93%);
+} */
+/* HASTA AQUI */
+
+@layer custom-utilities {
+  .menu-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Equivalente a gap-3 */
+    padding-left: 0.75rem; /* Equivalente a px-3 */
+    padding-right: 0.75rem;
+    padding-top: 0.5rem; /* Equivalente a py-2 */
+    padding-bottom: 0.5rem;
+    font-weight: 500; /* Equivalente a font-medium */
+    border-radius: 0.5rem; /* Equivalente a rounded-lg */
+    font-size: 0.875rem; /* Equivalente a text-theme-sm */
+    line-height: 1.25rem; /* Aproximación de text-theme-sm */
+  }
+
+  .menu-item-active {
+    background-color: var(--color-brand-50);
+    color: var(--color-brand-500);
+  }
+
+  .dark .menu-item-active {
+    background-color: rgba(
+      var(--color-brand-500-rgb),
+      0.12
+    ); /* Usando la variable RGB */
+    color: var(--color-brand-400);
+  }
+
+  .menu-item-inactive {
+    color: var(--color-gray-700);
+  }
+
+  .menu-item-inactive:hover {
+    background-color: var(--color-gray-100);
+    color: var(--color-gray-700);
+  }
+
+  .dark .menu-item-inactive {
+    color: var(--color-gray-300);
+  }
+
+  .dark .menu-item-inactive:hover {
+    background-color: rgba(
+      var(--color-white-rgb),
+      0.05
+    ); /* Aproximación de dark:hover:bg-white/5 */
+    color: var(--color-gray-300);
+  }
+
+  .menu-item-icon-active {
+    fill: var(--color-brand-500);
+  }
+
+  .dark .menu-item-icon-active {
+    fill: var(--color-brand-400);
+  }
+
+  .menu-item-icon-inactive {
+    fill: var(--color-gray-500);
+  }
+
+  .menu-item-inactive:hover .menu-item-icon-inactive {
+    fill: var(--color-gray-700);
+  }
+
+  .dark .menu-item-icon-inactive {
+    fill: var(--color-gray-400);
+  }
+
+  .dark .menu-item-inactive:hover .menu-item-icon-inactive {
+    fill: var(--color-gray-300);
+  }
+
+  .menu-item-arrow {
+    position: absolute;
+    top: 50%;
+    right: 1rem; /* Equivalente a right-2.5 */
+    transform: translateY(-50%);
+  }
+
+  .menu-item-arrow-active {
+    transform: translateY(-50%) rotate(180deg);
+    stroke: var(--color-brand-500);
+  }
+
+  .dark .menu-item-arrow-active {
+    stroke: var(--color-brand-400);
+  }
+
+  .menu-item-arrow-inactive {
+    stroke: var(--color-gray-500);
+  }
+
+  .menu-item-inactive:hover .menu-item-arrow-inactive {
+    stroke: var(--color-gray-700);
+  }
+
+  .dark .menu-item-arrow-inactive {
+    stroke: var(--color-gray-400);
+  }
+
+  .dark .menu-item-inactive:hover .menu-item-arrow-inactive {
+    stroke: var(--color-gray-300);
+  }
+
+  .menu-dropdown-item {
+    font-size: 0.875rem; /* Equivalente a text-theme-sm */
+    line-height: 1.25rem; /* Aproximación de text-theme-sm */
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* Equivalente a gap-3 */
+    border-radius: 0.5rem; /* Equivalente a rounded-lg */
+    padding-left: 0.75rem; /* Equivalente a px-3 */
+    padding-right: 0.75rem;
+    padding-top: 0.625rem; /* Equivalente a py-2.5 */
+    padding-bottom: 0.625rem;
+    font-weight: 500; /* Equivalente a font-medium */
+  }
+
+  .menu-dropdown-item-active {
+    background-color: var(--color-brand-50);
+    color: var(--color-brand-500);
+  }
+
+  .dark .menu-dropdown-item-active {
+    background-color: rgba(
+      var(--color-brand-500-rgb),
+      0.12
+    ); /* Usando la variable RGB */
+    color: var(--color-brand-400);
+  }
+
+  .menu-dropdown-item-inactive {
+    color: var(--color-gray-700);
+  }
+
+  .menu-dropdown-item-inactive:hover {
+    background-color: var(--color-gray-100);
+  }
+
+  .dark .menu-dropdown-item-inactive {
+    color: var(--color-gray-300);
+  }
+
+  .dark .menu-dropdown-item-inactive:hover {
+    background-color: rgba(
+      var(--color-white-rgb),
+      0.05
+    ); /* Aproximación de dark:hover:bg-white/5 */
+  }
+
+  .menu-dropdown-badge {
+    color: var(--color-brand-500);
+  }
+
+  .dark .menu-dropdown-badge {
+    color: var(--color-brand-400);
+  }
+
+  .menu-dropdown-badge {
+    display: block;
+    border-radius: 9999px; /* Equivalente a rounded-full */
+    padding-left: 0.625rem; /* Equivalente a px-2.5 */
+    padding-right: 0.625rem;
+    padding-top: 0.125rem; /* Equivalente a py-0.5 */
+    padding-bottom: 0.125rem;
+    font-size: 0.75rem; /* Equivalente a text-xs */
+    font-weight: 500; /* Equivalente a font-medium */
+    text-transform: uppercase;
+  }
+
+  .menu-dropdown-badge-active {
+    background-color: var(--color-brand-100);
+  }
+
+  .dark .menu-dropdown-badge-active {
+    background-color: rgba(
+      var(--color-brand-500-rgb),
+      0.2
+    ); /* Aproximación de dark:bg-brand-500/20 */
+  }
+
+  .menu-dropdown-badge-inactive {
+    background-color: var(--color-brand-50);
+  }
+
+  .menu-dropdown-item-inactive:hover .menu-dropdown-badge-inactive {
+    background-color: var(--color-brand-100);
+  }
+
+  .dark .menu-dropdown-badge-inactive {
+    background-color: rgba(
+      var(--color-brand-500-rgb),
+      0.15
+    ); /* Aproximación de dark:bg-brand-500/15 */
+  }
+
+  .dark .menu-dropdown-item-inactive:hover .menu-dropdown-badge-inactive {
+    background-color: rgba(
+      var(--color-brand-500-rgb),
+      0.2
+    ); /* Aproximación de dark:group-hover:bg-brand-500/20 */
+  }
+
+  .no-scrollbar {
+    /* Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 0.375rem; /* Equivalente a size-1.5 (1.5 * 0.25rem) */
+    height: 0.375rem; /* Equivalente a size-1.5 */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    border-radius: 9999px; /* Equivalente a rounded-full */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--color-gray-200);
+    border-radius: 9999px; /* Equivalente a rounded-full */
+  }
+
+  .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(
+      --color-gray-700
+    ); /* Usamos un color gray de tu paleta */
+  }
+}

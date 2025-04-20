@@ -12,13 +12,16 @@
 
     <!-- Menú de escritorio -->
     <div class="hidden md:flex space-x-6">
-      <a routerLink="/" class="relative text-white dark:text-gray-200 nav-link"
+      <a
+        routerLink="/"
+        class="relative text-white dark:text-gray-200 nav-link after:bg-green-500"
         >Inicio</a
       >
+
       <!-- Dropdown Nosotros -->
       <div class="relative group">
         <button
-          class="relative text-white dark:text-gray-200 nav-link flex items-center"
+          class="relative text-white dark:text-gray-200 nav-link flex items-center after:bg-green-500"
         >
           Nosotros
         </button>
@@ -50,87 +53,102 @@
 
       <a
         routerLink="/education"
-        class="relative text-white dark:text-gray-200 nav-link"
+        class="relative text-white dark:text-gray-200 nav-link after:bg-green-500"
         >Educación y Divulgación</a
       >
       <a
         routerLink="/team"
-        class="relative text-white dark:text-gray-200 nav-link"
+        class="relative text-white dark:text-gray-200 nav-link after:bg-green-500"
         >Equipo</a
       >
       <a
         routerLink="/contact"
-        class="relative text-white dark:text-gray-200 nav-link"
+        class="relative text-white dark:text-gray-200 nav-link after:bg-green-500"
         >Contacto</a
       >
     </div>
 
-    <!-- Botón Login visible siempre -->
-    <div class="hidden md:flex items-center space-x-4 ml-auto">
+    <!-- Login y botón hamburguesa siempre visibles -->
+    <div class="flex items-center space-x-4 md:space-x-4 md:ml-auto">
+      <!-- Botón Login (siempre visible) -->
       <a
-        href="#"
-        class="bg-azul_primary text-white px-4 py-2 rounded-lg hover:bg-blue-900 transition-colors duration-300"
+        href="./login"
+        class="bg-azul_primary text-white px-9 py-2 rounded-lg hover:bg-blue-900 transition-colors duration-300"
       >
         Login
       </a>
-    </div>
-
-    <!-- Botón menú móvil -->
-    <button
-      (click)="toggleMobileMenu()"
-      class="md:hidden text-white focus:outline-none transition-colors duration-300"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
+      <!-- Botón menú móvil -->
+      <button
+        (click)="toggleMobileMenu()"
+        class="md:hidden text-white focus:outline-none transition-colors duration-300"
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"
-        />
-      </svg>
-    </button>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
   </nav>
 
   <!-- Menú móvil -->
-  <div *ngIf="isMobileMenuOpen" class="md:hidden px-4 pb-4 space-y-2">
+  <div
+    *ngIf="isMobileMenuOpen"
+    class="absolute top-full left-0 right-0 bg-azul_secondary dark:bg-gray-800 z-50 md:hidden px-4 pb-4 space-y-2 shadow-lg"
+  >
     <a routerLink="/" class="block text-white dark:text-gray-200">Inicio</a>
-    <!-- Dropdown Nosotros Móvil -->
     <div>
       <button
         (click)="toggleSubMenu()"
-        class="w-full text-left text-white dark:text-gray-200"
+        class="w-full text-left text-white dark:text-gray-200 after:bg-green-500"
       >
         Nosotros
       </button>
       <div *ngIf="isSubMenuOpen" class="ml-4 space-y-1">
-        <a routerLink="/historia" class="block text-gray-300">Historia</a>
-        <a routerLink="/objetivos" class="block text-gray-300">Objetivos</a>
-        <a routerLink="/equipotrabajo" class="block text-gray-300"
+        <a routerLink="/historia" class="block text-gray-300 after:bg-green-500"
+          >Historia</a
+        >
+        <a
+          routerLink="/objetivos"
+          class="block text-gray-300 after:bg-green-500"
+          >Objetivos</a
+        >
+        <a
+          routerLink="/equipotrabajo"
+          class="block text-gray-300 after:bg-green-500"
           >Equipo de trabajo</a
         >
-        <a routerLink="/colaboracion" class="block text-gray-300"
+        <a
+          routerLink="/colaboracion"
+          class="block text-gray-300 after:bg-green-500"
           >Colaboración</a
         >
       </div>
     </div>
 
-    <a routerLink="/education" class="block text-white dark:text-gray-200"
+    <a
+      routerLink="/education"
+      class="block text-white dark:text-gray-200 after:bg-green-500"
       >Educación y Divulgación</a
     >
-    <a routerLink="/team" class="block text-white dark:text-gray-200">Equipo</a>
-    <a routerLink="/contact" class="block text-white dark:text-gray-200"
-      >Contacto</a
+    <a
+      routerLink="/team"
+      class="block text-white dark:text-gray-200 after:bg-green-500"
+      >Equipo</a
     >
     <a
-      href="#"
-      class="block bg-azul_primary text-white px-4 py-2 rounded-lg hover:bg-blue-900 transition-colors duration-300"
-      >Login</a
+      routerLink="/contact"
+      class="block text-white dark:text-gray-200 after:bg-green-500"
+      >Contacto</a
     >
   </div>
 </div>

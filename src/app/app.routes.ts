@@ -4,10 +4,23 @@ import { provideRouter } from '@angular/router';
 
 export const routes: Routes = [
   {
+    path: 'login',
+    loadComponent: () => import('./auth/login/login.component'),
+  },
+  {
+    path: 'dashboard',
+    loadComponent: () => import('./dashboard/dashboard.component'),
+    data: { layout: 'no-navbar-footer' },
+  },
+  {
     path: '',
     loadChildren: () => import('./features/pages/home.routes'),
   },
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

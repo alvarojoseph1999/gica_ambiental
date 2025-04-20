@@ -5,9 +5,11 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import { Router, NavigationEnd } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common'; // Importa CommonModule
-
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http'; // ✅ la nueva forma
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [
     RouterOutlet,
     FooterComponent,
@@ -21,6 +23,7 @@ import { CommonModule } from '@angular/common'; // Importa CommonModule
 export class AppComponent {
   title = 'ambiental';
   isLoading = false; // Asegurar que inicie en false
+  isDashboard: boolean = false;
 
   constructor(private router: Router) {
     this.router.events.subscribe((event) => {
@@ -28,6 +31,9 @@ export class AppComponent {
         // La página ya terminó de cargar, aseguramos que el footer se muestre
         this.isLoading = false;
       }
+    });
+    this.router.events.subscribe(() => {
+      this.isDashboard = this.router.url.includes('dashboard');
     });
   }
 }
