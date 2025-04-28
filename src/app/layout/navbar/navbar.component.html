@@ -1,6 +1,17 @@
-<div class="bg-azul_secondary dark:bg-gray-800 shadow-lg relative z-40">
+<!-- <div
+  class="bg-transparent dark:to-gray-800/60 shadow-2xl rounded-3xl fixed top-0 left-0 right-0 z-50 w-[80%] mx-auto"
+> -->
+<div
+  [ngClass]="{
+    'bg-transparent shadow-2xl text-white': isHome && !isScrolled,
+    'bg-white shadow-md top-0 text-black': !isHome && !isScrolled,
+    'bg-white shadow-md text-black': isScrolled,
+  
+  }"
+  class="rounded-3xl fixed top-[20px] left-0 right-0 z-50 w-[80%] mx-auto bg-transparent shadow-2xl transition-all duration-300"
+>
   <nav
-    class="container mx-auto px-4 py-4 flex items-center animate-fade-in justify-between"
+    class="w-full px-6 py-4 flex items-center animate-fade-in justify-between"
   >
     <!-- Logo -->
     <a
@@ -14,14 +25,12 @@
     <div class="hidden md:flex space-x-6">
       <a
         routerLink="/"
-        class="relative text-white dark:text-gray-200 nav-link after:bg-green-500"
+        class="relative nav-link after:bg-green-500 transition-colors duration-0"
         >Inicio</a
       >
-
-      <!-- Dropdown Nosotros -->
       <div class="relative group">
         <button
-          class="relative text-white dark:text-gray-200 nav-link flex items-center after:bg-green-500"
+          class="relative dark:text-gray-200 nav-link flex items-center after:bg-green-500"
         >
           Nosotros
         </button>
@@ -53,17 +62,17 @@
 
       <a
         routerLink="/education"
-        class="relative text-white dark:text-gray-200 nav-link after:bg-green-500"
+        class="relative dark:text-gray-200 nav-link after:bg-green-500"
         >Educación y Divulgación</a
       >
       <a
         routerLink="/team"
-        class="relative text-white dark:text-gray-200 nav-link after:bg-green-500"
+        class="relative dark:text-gray-200 nav-link after:bg-green-500"
         >Equipo</a
       >
       <a
         routerLink="/contact"
-        class="relative text-white dark:text-gray-200 nav-link after:bg-green-500"
+        class="relative dark:text-gray-200 nav-link after:bg-green-500"
         >Contacto</a
       >
     </div>
@@ -72,8 +81,8 @@
     <div class="flex items-center space-x-4 md:space-x-4 md:ml-auto">
       <!-- Botón Login (siempre visible) -->
       <a
-        href="./login"
-        class="bg-azul_primary text-white px-9 py-2 rounded-lg hover:bg-blue-900 transition-colors duration-300"
+        routerLink="/login"
+        class="bg-azul_primary text-white px-9 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300"
       >
         Login
       </a>

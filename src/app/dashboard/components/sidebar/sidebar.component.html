@@ -1,10 +1,9 @@
 <aside
-  [class.w-64]="!isSidebarCompact"
+  [class.w-48]="!isSidebarCompact"
   [class.w-20]="isSidebarCompact"
   class="transition-all duration-300 text-black h-screen overflow-hidden border-r border-gray-200"
 >
   <!-- SIDEBAR HEADER -->
-
   <div class="flex items-center px-4 pt-4 sidebar-header justify-center">
     <a href="index.html">
       <span class="logo">
@@ -13,19 +12,10 @@
           src="../../../../assets/logo_gica.jpg"
           alt="Logo"
         />
-        <!-- <img
-          class="hidden dark:block"
-          src="./images/logo/logo-dark.svg"
-          alt="Logo"
-        /> -->
       </span>
     </a>
   </div>
   <!-- SIDEBAR HEADER -->
-
-  <!-- <div
-    class="flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar"
-  > -->
   <div
     class="flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar px-4"
   >
@@ -60,7 +50,6 @@
                     selected !== 'Dashboard'
                 }"
               />
-
               <!-- Text -->
               <span
                 *ngIf="!isSidebarCompact"
@@ -70,78 +59,8 @@
               >
                 Dashboard
               </span>
-
-              <!-- Arrow -->
-              <!-- <svg
-                class="ml-auto w-4 h-4 transition-transform duration-300"
-                [ngClass]="{
-                  'rotate-180 text-blue-600': selected === 'Dashboard',
-                  'text-gray-400 group-hover:text-blue-500':
-                    selected !== 'Dashboard',
-                  'opacity-0 lg:opacity-100': sidebarToggle
-                }"
-                fill="none"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M4.79175 7.39584L10.0001 12.6042L15.2084 7.39585"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg> -->
             </a>
-
-            <!-- Dropdown Menu -->
-
-            <!-- <div
-              class="mt-1 transition-all duration-300 ease-in-out"
-              [ngClass]="{
-                block: selected === 'Dashboard',
-                hidden: selected !== 'Dashboard'
-              }"
-            >
-              <ul class="space-y-1">
-                <li>
-                  <a
-                    (click)="navigateToPage('ecommerce')"
-                    class="group flex items-center gap-2 px-3 py-2 rounded-lg transition-colors duration-300 ml-10"
-                    [ngClass]="{
-                      'bg-blue-200 text-blue-800': page === 'ecommerce',
-                      'hover:bg-blue-100 text-gray-600': page !== 'ecommerce'
-                    }"
-                  >
-                     Icono opcional para eCommerce 
-                    <svg
-                      class="w-5 h-5 transition-colors duration-300"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M3 3h18M9 3v18m6-18v18M3 9h18"
-                      />
-                    </svg>
-
-                     Texto 
-                    <span
-                      *ngIf="!isSidebarCompact"
-                      class="text-sm font-medium transition-all duration-300"
-                      [class.opacity-0]="isSidebarCompact"
-                      [class.opacity-100]="!isSidebarCompact"
-                    >
-                      eCommerce
-                    </span>
-                  </a>
-                </li>
-              </ul>
-            </div> -->
           </li>
-
           <!-- Menu Item Dashboard -->
 
           <!-- Menu Item Calendar -->
@@ -235,77 +154,8 @@
                 [class.opacity-100]="!isSidebarCompact"
                 >Forms</span
               >
-              <!-- <svg
-                class="menu-item-arrow absolute right-2.5 top-1/2 -translate-y-1/2 stroke-current"
-                [ngClass]="[
-                  selected === 'Forms'
-                    ? 'menu-item-arrow-active'
-                    : 'menu-item-arrow-inactive',
-                  sidebarToggle ? 'lg:hidden' : ''
-                ]"
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4.79175 7.39584L10.0001 12.6042L15.2084 7.39585"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg> -->
-
-              <!-- Arrow -->
-              <!-- <svg
-                class="ml-auto w-4 h-4 transition-transform duration-300"
-                [ngClass]="{
-                  'rotate-180 text-blue-600': selected === 'Dashboard',
-                  'text-gray-400 group-hover:text-blue-500':
-                    selected !== 'Dashboard',
-                  'opacity-0 lg:opacity-100': sidebarToggle
-                }"
-                fill="none"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M4.79175 7.39584L10.0001 12.6042L15.2084 7.39585"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg> -->
             </a>
 
-            <!-- Dropdown Menu Start -->
-            <!-- <div
-              class="mt-1 transition-all duration-300 ease-in-out"
-              [ngClass]="{
-                block: selected === 'Forms',
-                hidden: selected !== 'Forms'
-              }"
-            >
-              <ul
-                class="flex flex-col gap-1 mt-2 menu-dropdown pl-9"
-                *ngIf="!isSidebarCompact"
-              >
-                <li>
-                  <a
-                    href="form-elements.html"
-                    class="menu-dropdown-item group"
-                    [ngClass]="
-                      page === 'formElements'
-                        ? 'menu-dropdown-item-active'
-                        : 'menu-dropdown-item-inactive'
-                    "
-                  >
-                    Form Elements
-                  </a>
-                </li>
-              </ul>
-            </div> -->
             <!-- Dropdown Menu End -->
           </li>
 
@@ -337,55 +187,7 @@
                 [class.opacity-100]="!isSidebarCompact"
                 >Tables</span
               >
-              <!-- Arrow -->
-              <!-- <svg
-                class="ml-auto w-4 h-4 transition-transform duration-300"
-                [ngClass]="{
-                  'rotate-180 text-blue-600': selected === 'Dashboard',
-                  'text-gray-400 group-hover:text-blue-500':
-                    selected !== 'Dashboard',
-                  'opacity-0 lg:opacity-100': sidebarToggle
-                }"
-                fill="none"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M4.79175 7.39584L10.0001 12.6042L15.2084 7.39585"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg> -->
             </a>
-
-            <!-- Dropdown Menu Start -->
-            <!-- <div
-              class="mt-1 transition-all duration-300 ease-in-out"
-              [ngClass]="{
-                block: selected === 'Tables',
-                hidden: selected !== 'Tables'
-              }"
-            >
-              <ul
-                class="flex flex-col gap-1 mt-2 menu-dropdown pl-9"
-                *ngIf="!isSidebarCompact"
-              >
-                <li>
-                  <a
-                    href="tables-elements.html"
-                    class="menu-dropdown-item group"
-                    [ngClass]="
-                      page === 'tablesElements'
-                        ? 'menu-dropdown-item-active'
-                        : 'menu-dropdown-item-inactive'
-                    "
-                  >
-                    Basic Tables
-                  </a>
-                </li>
-              </ul>
-            </div> -->
             <!-- Dropdown Menu End -->
           </li>
 
@@ -417,68 +219,8 @@
                 [class.opacity-100]="!isSidebarCompact"
                 >Pages</span
               >
-              <!-- Arrow -->
-              <!-- <svg
-                class="ml-auto w-4 h-4 transition-transform duration-300"
-                [ngClass]="{
-                  'rotate-180 text-blue-600': selected === 'Dashboard',
-                  'text-gray-400 group-hover:text-blue-500':
-                    selected !== 'Dashboard',
-                  'opacity-0 lg:opacity-100': sidebarToggle
-                }"
-                fill="none"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M4.79175 7.39584L10.0001 12.6042L15.2084 7.39585"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg> -->
             </a>
 
-            <!-- Dropdown Menu Start -->
-            <!-- <div
-              class="mt-1 transition-all duration-300 ease-in-out"
-              [ngClass]="{
-                block: selected === 'Pages',
-                hidden: selected !== 'Pages'
-              }"
-            >
-              <ul
-                class="flex flex-col gap-1 mt-2 menu-dropdown pl-9"
-                *ngIf="!isSidebarCompact"
-              >
-                <li>
-                  <a
-                    href="tables-elements.html"
-                    class="menu-dropdown-item group"
-                    [ngClass]="
-                      page === 'tablesElements'
-                        ? 'menu-dropdown-item-active'
-                        : 'menu-dropdown-item-inactive'
-                    "
-                  >
-                    Blank Page
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="tables-elements.html"
-                    class="menu-dropdown-item group"
-                    [ngClass]="
-                      page === 'tablesElements'
-                        ? 'menu-dropdown-item-active'
-                        : 'menu-dropdown-item-inactive'
-                    "
-                  >
-                    404 Error
-                  </a>
-                </li>
-              </ul>
-            </div> -->
             <!-- Dropdown Menu End -->
           </li>
           <!-- Menu Item Pages -->
@@ -486,27 +228,5 @@
       </div>
     </nav>
     <!-- Sidebar Menu -->
-
-    <!-- Promo Box -->
-    <!-- <div
-      :class="sidebarToggle ? 'lg:hidden' : ''"
-      class="mx-auto mb-10 w-full max-w-60 rounded-2xl bg-gray-50 px-4 py-5 text-center dark:bg-white/[0.03]"
-    >
-      <h3 class="mb-2 font-semibold text-gray-900 dark:text-white">
-        #1 Tailwind CSS Dashboard
-      </h3>
-      <p class="mb-4 text-gray-500 text-theme-sm dark:text-gray-400">
-        Leading Tailwind CSS Admin Template with 400+ UI Component and Pages.
-      </p>
-      <a
-        href="https://tailadmin.com/pricing"
-        target="_blank"
-        rel="nofollow"
-        class="flex items-center justify-center p-3 font-medium text-white rounded-lg bg-brand-500 text-theme-sm hover:bg-brand-600"
-      >
-        Purchase Plan
-      </a>
-    </div> -->
-    <!-- Promo Box -->
   </div>
 </aside>

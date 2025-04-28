@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Output, EventEmitter, HostListener } from '@angular/core';
 import { SidebarService } from '../../../services/sidebar.service'; // Importamos el servicio
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -112,18 +113,7 @@ export class HeaderComponent {
     this.dropdownOpen = false;
   }
 
-  // toggleUserDropdown() {
-  //   this.dropdownOpen = !this.dropdownOpen;
-  // }
-
-  // closeUserDropdown() {
-  //   this.dropdownOpen = false;
-  // }
-  // toggleSidebar() {
-  //   this.sidebarToggle = !this.sidebarToggle;
-  // }
-
-  constructor(private sidebarService: SidebarService) {}
+  constructor(private sidebarService: SidebarService, private router: Router) {}
 
   // Método para alternar el estado del sidebar
   toggleSidebar(): void {
@@ -141,4 +131,12 @@ export class HeaderComponent {
     this.isDropdownOpen = false;
   }
   dropdownArea = false;
+
+  logout() {
+    // Aquí puedes limpiar el localStorage, cookies, tokens, etc.
+    localStorage.clear(); // o lo que uses para manejar sesiones
+
+    // Luego rediriges
+    this.router.navigate(['']);
+  }
 }

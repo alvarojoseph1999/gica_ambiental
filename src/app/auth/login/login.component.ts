@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +16,7 @@ import { HttpClient } from '@angular/common/http';
 export default class LoginComponent {
   email: string = '';
   password: string = '';
+  @ViewChild('containerRef') container!: ElementRef<HTMLDivElement>;
 
   constructor(private router: Router, private http: HttpClient) {}
 
@@ -45,5 +47,13 @@ export default class LoginComponent {
       */
       alert('Usuario o contraseña incorrectos');
     }
+  }
+
+  activateRegister(): void {
+    this.container.nativeElement.classList.add('active');
+  }
+
+  activateLogin(): void {
+    this.container.nativeElement.classList.remove('active');
   }
 }

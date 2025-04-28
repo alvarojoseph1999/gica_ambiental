@@ -1,4 +1,42 @@
-<app-navbar *ngIf="!isDashboard" />
-<router-outlet />
-<app-footer *ngIf="!isDashboard"></app-footer>
 <!-- *ngIf="!isLoading"  -->
+<!-- AQUI ABAJO ES ORIGIANL -->
+<!-- Loader (mientras se carga el contenido) -->
+<!-- <app-loading *ngIf="isLoading"></app-loading> -->
+
+<!-- Si NO estamos en Dashboard -->
+<!-- <ng-container *ngIf="!isDashboard">
+  <app-navbar *ngIf="showNav" [ngClass]="{ 'loading-navbar': isLoading }" />
+  <div [ngClass]="getMarginTopClass()">
+    <router-outlet *ngIf="!isLoading"></router-outlet>
+  </div>
+  <app-footer *ngIf="!isDashboard && !isLoading"></app-footer>
+</ng-container> -->
+
+<!-- Si estamos en Dashboard -->
+<!-- <ng-container *ngIf="isDashboard">
+  <router-outlet *ngIf="!isLoading"></router-outlet>
+</ng-container> -->
+
+<!--! Si estamos en el login, solo el contenidasdasdasdo -->
+<!-- Navbar siempre visible -->
+<!-- Navbar (siempre visible excepto en dashboard) -->
+<ng-container *ngIf="!isDashboard && showNav">
+  <app-navbar />
+</ng-container>
+
+<!-- Loading Screen -->
+<div *ngIf="isLoading" class="loading-screen">
+  <app-loading></app-loading>
+</div>
+
+<!-- Contenido de la página -->
+<ng-container *ngIf="!isLoading">
+  <div [ngClass]="getMarginTopClass()">
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- Footer -->
+  <ng-container *ngIf="!isDashboard">
+    <app-footer />
+  </ng-container>
+</ng-container>

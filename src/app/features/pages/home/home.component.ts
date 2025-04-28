@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  ViewChild,
+  AfterViewInit,
+  HostListener,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
@@ -9,7 +15,7 @@ import { ChartModule } from 'primeng/chart';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export default class HomeComponent {
+export default class HomeComponent implements AfterViewInit {
   titulo = 'HOLA MUNDO';
   subtitulo = 'HOLA';
   isMobileMenuOpen = false;
@@ -96,5 +102,24 @@ export default class HomeComponent {
         },
       },
     };
+  }
+
+  // scroll animation
+  @ViewChild('sectionEl') sectionEl!: ElementRef;
+  animationClass = 'opacity-0';
+
+  ngAfterViewInit(): void {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          this.animationClass = 'animate-fade-zoom-in';
+        } else {
+          this.animationClass = 'animate-fade-zoom-out';
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(this.sectionEl.nativeElement);
   }
 }

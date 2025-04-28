@@ -307,4 +307,12 @@ body {
       --color-gray-700
     ); /* Usamos un color gray de tu paleta */
   }
+
+  body.with-navbar {
+    padding-top: 50px;
+  }
+
+  body.no-navbar {
+    padding-top: 0;
+  }
 }

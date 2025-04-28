@@ -26,15 +26,6 @@ export class SidebarComponent {
   }
   isSidebarOpen: boolean = false;
 
-  // constructor(private sidebarService: SidebarService) {}
-
-  // ngOnInit(): void {
-  //   // Nos suscribimos al observable para obtener el estado del sidebar
-  //   this.sidebarService.sidebarState$.subscribe((state) => {
-  //     this.isSidebarOpen = state;
-  //   });
-  // }
-
   isSidebarCompact = false; // 👈 modo compacto cuando es true
 
   constructor(private sidebarService: SidebarService) {}
