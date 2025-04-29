@@ -31,7 +31,7 @@
 
 <!-- Contenido de la página -->
 <ng-container *ngIf="!isLoading">
-  <div [ngClass]="getMarginTopClass()">
+  <div [ngClass]="[showNav ? 'with-navbar' : 'no-navbar', getMarginTopClass()]">
     <router-outlet></router-outlet>
   </div>
 

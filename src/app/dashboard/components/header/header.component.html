@@ -1,11 +1,13 @@
 <div
-  class="sticky top-0 z-99999 flex w-full border-gray-200 bg-white lg:border-b dark:border-gray-800 dark:bg-gray-900"
+  class="sticky top-0 z-99999 flex w-full border-b border-gray-200 bg-white lg:border-b dark:border-gray-800 dark:bg-gray-900"
 >
+  <!-- Contenedor principal con la estructura flex -->
   <div
-    class="flex grow flex-col items-center justify-between lg:flex-row lg:px-6"
+    class="flex w-full items-center justify-between gap-2 px-3 py-1 sm:gap-4 lg:px-6"
   >
+    <!-- Primer elemento dentro del contenedor -->
     <div
-      class="flex w-full items-center justify-between gap-2 border-b border-gray-200 px-3 py-3 sm:gap-4 lg:justify-normal lg:border-b-0 lg:px-0 lg:py-4 dark:border-gray-800"
+      class="flex w-full items-center justify-between gap-2 px-3 py-3 sm:gap-4 lg:justify-normal lg:border-b-0 lg:px-0 lg:py-4 dark:border-gray-800"
     >
       <!-- Hamburger Toggle BTN -->
       <button
@@ -69,11 +71,6 @@
 
       <a href="index.html" class="lg:hidden">
         <img
-          class="dark:hidden"
-          src="../../../../assets/logo_gica.jpg"
-          alt="Logo"
-        />
-        <img
           class="hidden dark:block"
           src="../../../../assets/logo_gica.jpg"
           alt="Logo"
@@ -82,10 +79,10 @@
     </div>
 
     <div
-      class="shadow-theme-md w-full items-center justify-between gap-4 px-5 py-4 lg:flex lg:justify-end lg:px-0 lg:shadow-none"
+      class="flex shadow-theme-md w-full items-center justify-end gap-4 px-5 py-4 lg:flex lg:justify-end lg:px-0 lg:shadow-none"
     >
       <div class="2xsm:gap-3 flex items-center gap-2">
-        <!-- Dark Mode Toggler -->
+        <!-- Botón para cambiar el tema -->
         <button
           class="hover:text-dark-900 relative flex h-11 w-11 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
           (click.prevent)="toggleDarkMode()"

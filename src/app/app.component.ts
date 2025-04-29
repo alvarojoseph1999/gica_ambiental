@@ -45,22 +45,14 @@ export class AppComponent implements OnInit {
           event.urlAfterRedirects.startsWith('/dashboard');
         this.showNav = !isDashboardRoute;
         this.isDashboard = isDashboardRoute;
-
         // Limpiamos las clases primero
         document.body.classList.remove('with-navbar', 'no-navbar');
         // Cambiar clases del body
-        // Agregamos la clase correcta
         if (this.isDashboard) {
           document.body.classList.add('no-navbar');
         } else {
           document.body.classList.add('with-navbar');
         }
-        // this.isHome =
-        //   event.urlAfterRedirects === '/' ||
-        //   event.urlAfterRedirects === '/home' ||
-        //   event.urlAfterRedirects === '/contact';
-
-        // this.isLoading = false;
       }
     });
   }
@@ -84,15 +76,23 @@ export class AppComponent implements OnInit {
         this.isLoading = true;
       }
       // Aquí puedes añadir tu lógica para determinar si estamos en el Dashboard
-      this.isDashboard = window.location.pathname.includes('dashboard');
+      // this.isDashboard = window.location.pathname.includes('dashboard');
       if (event instanceof NavigationEnd || event instanceof NavigationError) {
         // Detener el loader cuando la navegación termine o haya un error
         setTimeout(() => {
           this.isLoading = false;
           // Asegurarse de que el navbar tenga la sombra aunque esté cargando
-          document.body.classList.add('with-navbar');
-          document.body.classList.remove('no-navbar');
-        }, 500); // Retrasar un poco el fin de la carga para dar tiempo al loader a mostrarse
+          this.isDashboard = window.location.pathname.includes('dashboard');
+          document.body.classList.remove('with-navbar', 'no-navbar');
+
+          if (this.isDashboard) {
+            // Dashboard NO debe tener padding
+            document.body.classList.add('no-navbar');
+          } else {
+            // Otras rutas sí deben tener padding
+            document.body.classList.add('with-navbar');
+          }
+        }, 2000); // Retrasar un poco el fin de la carga para dar tiempo al loader a mostrarse
       }
     });
 
@@ -115,7 +115,7 @@ export class AppComponent implements OnInit {
       if (this.navbar) {
         this.navbarHeight = this.navbar.nativeElement.offsetHeight;
       }
-    }, 2000);
+    }, 1000);
     // Aquí puedes agregar lógica para detectar si estás en el dashboard, por ejemplo:
     this.isDashboard = this.checkIfDashboard();
   }
