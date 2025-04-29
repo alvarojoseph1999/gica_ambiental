@@ -4,7 +4,7 @@ import { ApexOptions } from 'apexcharts';
 
 @Component({
   selector: 'app-chart01',
-  imports: [NgClass, NgIf],
+  imports: [],
   templateUrl: './chart01.component.html',
   styleUrl: './chart01.component.css',
 })
