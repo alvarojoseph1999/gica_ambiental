@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { SidebarService } from '../../../services/sidebar.service';
+
+import { SidebarService } from '../../../../services/sidebar.service';
 import { CommonModule, NgClass } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -7,7 +8,7 @@ import { RouterModule } from '@angular/router'; // <-- Asegúrate de esto
 
 @Component({
   selector: 'app-sidebar',
-  imports: [NgClass, CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css',
 })
@@ -32,9 +33,9 @@ export class SidebarComponent {
   isSidebarCompact = false; // 👈 modo compacto cuando es true
 
   constructor(private sidebarService: SidebarService, private router: Router) {
-    this.router.events.subscribe((event) => {
-      console.log('Router event:', event);
-    });
+    // this.router.events.subscribe((event) => {
+    //   console.log('Router event:', event);
+    // });
   }
 
   ngOnInit(): void {
@@ -43,22 +44,27 @@ export class SidebarComponent {
     });
 
     // Detecta la ruta actual incluso después de recargar o navegar directamente
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe((event: any) => {
-        const currentUrl = event.urlAfterRedirects;
+    // this.router.events
+    //   .pipe(filter((event) => event instanceof NavigationEnd))
+    //   .subscribe((event: any) => {
+    //     const currentUrl = event.urlAfterRedirects;
 
-        if (currentUrl.includes('/dashboard/clima')) {
-          this.selected = 'clima';
-        } else if (
-          currentUrl === '/dashboard' ||
-          currentUrl.includes('/dashboard/')
-        ) {
-          this.selected = 'Dashboard';
-        } else {
-          this.selected = ''; // O el que corresponda
-        }
-      });
+    //     if (currentUrl.includes('/dashboard/gica/principal')) {
+    //       this.selected = 'principal';
+    //     } else if (
+    //       currentUrl === '/dashboard/gica/clima' ||
+    //       currentUrl.includes('')
+    //     ) {
+    //       this.selected = 'clima';
+    //     } else if (
+    //       currentUrl === '/dashboard/gica/temperatura' ||
+    //       currentUrl.includes('')
+    //     ) {
+    //       this.selected = 'temperatura';
+    //     } else {
+    //       this.selected = ''; // O el que corresponda
+    //     }
+    //   });
   }
 
   page: string = '';

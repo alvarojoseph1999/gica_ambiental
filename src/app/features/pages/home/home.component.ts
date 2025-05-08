@@ -4,11 +4,14 @@ import {
   ViewChild,
   AfterViewInit,
   HostListener,
+  QueryList,
+  ViewChildren,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { ChartModule } from 'primeng/chart';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   imports: [CommonModule, CardModule, ButtonModule, ChartModule],
@@ -16,6 +19,9 @@ import { ChartModule } from 'primeng/chart';
   styleUrl: './home.component.css',
 })
 export default class HomeComponent implements AfterViewInit {
+  irADetalle() {
+    this.router.navigate(['/equipotrabajo']);
+  }
   titulo = 'HOLA MUNDO';
   subtitulo = 'HOLA';
   isMobileMenuOpen = false;
@@ -69,7 +75,7 @@ export default class HomeComponent implements AfterViewInit {
     },
   ];
 
-  constructor() {
+  constructor(private router: Router) {
     this.chartData = {
       labels: [
         '40% Ambiental',
@@ -105,21 +111,40 @@ export default class HomeComponent implements AfterViewInit {
   }
 
   // scroll animation
-  @ViewChild('sectionEl') sectionEl!: ElementRef;
-  animationClass = 'opacity-0';
+  // @ViewChild('sectionEl') sectionEl!: ElementRef;
+  // animationClass = 'opacity-0';
+
+  // ngAfterViewInit(): void {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         this.animationClass = 'animate-fade-zoom-in';
+  //       } else {
+  //         this.animationClass = 'animate-fade-zoom-out';
+  //       }
+  //     },
+  //     { threshold: 0.3 }
+  //   );
+
+  //   observer.observe(this.sectionEl.nativeElement);
+  // }
+  @ViewChildren('sectionEl') sections!: QueryList<ElementRef>;
+  animationClasses: string[] = [];
 
   ngAfterViewInit(): void {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          this.animationClass = 'animate-fade-zoom-in';
-        } else {
-          this.animationClass = 'animate-fade-zoom-out';
-        }
-      },
-      { threshold: 0.3 }
-    );
+    this.sections.forEach((section, index) => {
+      this.animationClasses[index] = 'opacity-0';
 
-    observer.observe(this.sectionEl.nativeElement);
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          this.animationClasses[index] = entry.isIntersecting
+            ? 'animate-fade-zoom-in'
+            : 'animate-fade-zoom-out';
+        },
+        { threshold: 0.3 }
+      );
+
+      observer.observe(section.nativeElement);
+    });
   }
 }

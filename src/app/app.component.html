@@ -20,12 +20,13 @@
 <!--! Si estamos en el login, solo el contenidasdasdasdo -->
 <!-- Navbar siempre visible -->
 <!-- Navbar (siempre visible excepto en dashboard) -->
+<!-- ! ME QUEDE AQUI LO CUAL RECOMEINDA CREAR LAYOUT Y DEJAR SOLO EL ROUTER OUTLET -->
 <ng-container *ngIf="!isDashboard && showNav">
   <app-navbar />
 </ng-container>
 
 <!-- Loading Screen -->
-<div *ngIf="isLoading" class="loading-screen">
+<div *ngIf="isLoading && !isDashboard && showNav" class="loading-screen">
   <app-loading></app-loading>
 </div>
 

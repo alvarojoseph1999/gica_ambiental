@@ -31,24 +31,24 @@
           <!-- Menu Item Dashboard -->
           <li>
             <a
-              routerLink="/dashboard"
+              routerLink="principal"
               routerLinkActive="bg-blue-100 text-blue-600"
               [routerLinkActiveOptions]="{ exact: true }"
               class="menu-item group flex items-center gap-2 rounded-lg transition-colors duration-300"
               [ngClass]="{
-                'bg-blue-100 text-blue-600': selected === 'dashboard',
-                'hover:bg-blue-50 text-gray-700': selected !== 'dashboard'
+                'bg-blue-100 text-blue-600': selected === 'principal',
+                'hover:bg-blue-50 text-gray-700': selected !== 'principal'
               }"
             >
               <!-- Icon usando PNG -->
               <img
                 src="../../../../assets/planetatierra.png"
-                alt="dashboard Icon"
+                alt="gicaDashboard Icon"
                 class="w-6 h-6 transition-colors duration-300"
                 [ngClass]="{
-                  'filter-blue': selected === 'dashboard',
+                  'filter-blue': selected === 'gicaDashboard',
                   'filter-gray group-hover:filter-blue-hover':
-                    selected !== 'dashboard'
+                    selected !== 'gicaDashboard'
                 }"
               />
               <!-- Text -->
@@ -96,12 +96,12 @@
           </li>
           <li>
             <a
-              href="#"
+              routerLink="temperatura"
               (click)="toggleSelected('Profile')"
               class="menu-item group flex items-center gap-3"
               [ngClass]="{
-                'bg-blue-100 text-blue-600': selected === 'Profile',
-                'hover:bg-blue-50 text-gray-700': selected !== 'Profile'
+                'bg-blue-100 text-blue-600': selected === 'temperatura',
+                'hover:bg-blue-50 text-gray-700': selected !== 'temperatura'
               }"
             >
               <img
@@ -119,7 +119,7 @@
                 class="menu-item-text text-sm font-medium transition-all duration-300"
                 [class.opacity-0]="isSidebarCompact"
                 [class.opacity-100]="!isSidebarCompact"
-                >Sol</span
+                >Soasdasdl</span
               >
             </a>
           </li>

@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
 import { ButtonModule } from 'primeng/button'; // ✅ Importa el módulo de botones de PrimeNG
 import { CommonModule } from '@angular/common';
 
+import { Router } from '@angular/router';
 interface Profesional {
   nombre: string;
   categoria: string;
@@ -18,6 +19,10 @@ interface Profesional {
   styleUrl: './teamjob.component.css',
 })
 export default class TeamjobComponent {
+  constructor(private router: Router) {}
+  irADetalle() {
+    this.router.navigate(['/team']);
+  }
   categorias: string[] = [
     'Todos',
     'Direccion',
@@ -31,25 +36,25 @@ export default class TeamjobComponent {
     {
       nombre: 'Pepe Peres Pamela',
       categoria: 'Direccion',
-      imagen: 'assets/img1.jpg',
+      imagen: 'assets/ceo.jpg',
       descripcion: 'Líder del equipo',
     },
     {
       nombre: 'Ambienta Ambiental',
       categoria: 'Investigadores',
-      imagen: 'assets/img2.jpg',
+      imagen: 'assets/ceo.jpg',
       descripcion: 'Especialista en medio ambiente',
     },
     {
       nombre: 'Carlos Mendoza',
       categoria: 'Profesionales',
-      imagen: 'assets/img3.jpg',
+      imagen: 'assets/ceo.jpg',
       descripcion: 'Ingeniero de software',
     },
     {
       nombre: 'María Torres',
       categoria: 'Administrativos',
-      imagen: 'assets/img4.jpg',
+      imagen: 'assets/ceo.jpg',
       descripcion: 'Coordinadora de proyectos',
     },
   ];
