@@ -15,6 +15,7 @@ import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
+  standalone: true,
   imports: [
     CommonModule,
     MenubarModule,
@@ -29,7 +30,7 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent implements OnInit {
-  //isMenuOpen = false; // Controla la visibilidad del menú lateral
+  isMenuOpen = false; // Controla la visibilidad del menú lateral
   items: MenuItem[] | undefined;
   isDarkMode = false;
   isMobileMenuOpen = false;
@@ -64,16 +65,16 @@ export class NavbarComponent implements OnInit {
   }
   ngOnInit() {
     // Detectar ruta actual y escuchar cambios
-    // this.router.events.subscribe((event) => {
-    //   if (event instanceof NavigationEnd) {
-    //     this.isHome = event.urlAfterRedirects === '/' || event.url === '/';
-    //   }
-    //   if (event instanceof NavigationEnd) {
-    //     this.isHomePage =
-    //       event.urlAfterRedirects === '/' ||
-    //       event.urlAfterRedirects === '/home';
-    //   }
-    // });
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.isHome = event.urlAfterRedirects === '/' || event.url === '/';
+      }
+      if (event instanceof NavigationEnd) {
+        this.isHomePage =
+          event.urlAfterRedirects === '/' ||
+          event.urlAfterRedirects === '/home';
+      }
+    });
     this.checkIfHome(this.router.url);
 
     this.router.events.subscribe((event) => {
@@ -146,4 +147,133 @@ export class NavbarComponent implements OnInit {
       ? 'bg-transparent shadow-2xl'
       : 'bg-white shadow-md top-0';
   }
+  //! pasodofniagn
+  // items: MenuItem[] | undefined;
+  // isDarkMode = false;
+  // isMobileMenuOpen = false;
+  // isSubMenuOpen = false;
+  // isScrolled = false;
+  // isHomePage = false;
+
+  // @Input() isHome = false;
+
+  // constructor(private router: Router) {
+  //   this.isDarkMode = localStorage.getItem('theme') === 'dark';
+  //   this.applyTheme();
+  // }
+
+  // ngOnInit(): void {
+  //   // Comprobar si estamos en la página de inicio al cargar el componente
+  //   this.updateNavbarState(this.router.url);
+
+  //   // Escuchar cambios en las rutas
+  //   this.router.events.subscribe((event) => {
+  //     if (event instanceof NavigationEnd) {
+  //       this.updateNavbarState(event.urlAfterRedirects);
+  //     }
+  //   });
+
+  //   // Configurar el menú
+  //   this.items = [
+  //     {
+  //       label: 'Home',
+  //       icon: 'pi pi-home',
+  //     },
+  //     {
+  //       label: 'Projects',
+  //       icon: 'pi pi-search',
+  //       badge: '3',
+  //       items: [
+  //         {
+  //           label: 'Core',
+  //           icon: 'pi pi-bolt',
+  //           shortcut: '⌘+S',
+  //         },
+  //         {
+  //           label: 'Blocks',
+  //           icon: 'pi pi-server',
+  //           shortcut: '⌘+B',
+  //         },
+  //         {
+  //           separator: true,
+  //         },
+  //         {
+  //           label: 'UI Kit',
+  //           icon: 'pi pi-pencil',
+  //           shortcut: '⌘+U',
+  //         },
+  //       ],
+  //     },
+  //   ];
+  // }
+
+  // @HostListener('window:scroll', ['$event'])
+  // onScroll(): void {
+  //   // Detecta si se ha hecho scroll para aplicar sombras
+  //   this.isScrolled = window.scrollY > 50;
+  // }
+
+  // updateNavbarState(url: string): void {
+  //   // Verifica si estamos en la página de inicio
+  //   this.isHomePage = url === '/' || url === '/home';
+  //   this.isHome = this.isHomePage;
+  //   this.applyBodyClasses();
+  // }
+
+  // applyBodyClasses(): void {
+  //   // Ajusta las clases del body según el estado actual
+  //   document.body.classList.remove('with-navbar', 'no-navbar');
+
+  //   if (this.isHomePage) {
+  //     document.body.classList.add('with-navbar');
+  //   } else {
+  //     document.body.classList.add('with-navbar');
+  //   }
+  // }
+
+  // toggleMobileMenu(): void {
+  //   this.isMobileMenuOpen = !this.isMobileMenuOpen;
+
+  //   // Si se cierra el menú principal, también cierra el submenu
+  //   if (!this.isMobileMenuOpen) {
+  //     this.isSubMenuOpen = false;
+  //   }
+  // }
+
+  // toggleSubMenu(): void {
+  //   this.isSubMenuOpen = !this.isSubMenuOpen;
+  // }
+
+  // toggleDarkMode(): void {
+  //   this.isDarkMode = !this.isDarkMode;
+  //   localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
+  //   this.applyTheme();
+  // }
+
+  // applyTheme(): void {
+  //   // Aplicar el tema oscuro si está activado
+  //   if (this.isDarkMode) {
+  //     document.documentElement.classList.add('dark');
+  //   } else {
+  //     document.documentElement.classList.remove('dark');
+  //   }
+  // }
+
+  // // get navbarClasses(): string {
+  // //   // Devuelve las clases del navbar según el estado
+  // //   if (this.isScrolled) {
+  // //     return 'bg-white shadow-md text-black';
+  // //   }
+  // //   return this.isHome
+  // //     ? 'bg-transparent shadow-2xl text-white'
+  // //     : 'bg-white shadow-md text-black';
+  // // }
+  // get navbarClasses() {
+  //   if (this.isScrolled) {
+  //     return 'bg-black shadow-md text-black';
+  //   }
+  //   return this.isHome
+  //     ? 'bg-transparent shadow-2xl'
+  //     : 'bg-white shadow-md top-0';
+  // }
 }

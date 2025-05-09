@@ -4,9 +4,7 @@
 <div
   [ngClass]="{
     'bg-transparent shadow-2xl text-white': isHome && !isScrolled,
-    'bg-white shadow-md top-0 text-black': !isHome && !isScrolled,
-    'bg-white shadow-md text-black': isScrolled,
-  
+    'bg-white shadow-md text-black': !isHome || isScrolled
   }"
   class="rounded-3xl fixed top-[20px] left-0 right-0 z-50 w-[80%] mx-auto bg-transparent shadow-2xl transition-all duration-300"
 >

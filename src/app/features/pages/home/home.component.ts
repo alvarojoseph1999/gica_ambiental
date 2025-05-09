@@ -109,25 +109,6 @@ export default class HomeComponent implements AfterViewInit {
       },
     };
   }
-
-  // scroll animation
-  // @ViewChild('sectionEl') sectionEl!: ElementRef;
-  // animationClass = 'opacity-0';
-
-  // ngAfterViewInit(): void {
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       if (entry.isIntersecting) {
-  //         this.animationClass = 'animate-fade-zoom-in';
-  //       } else {
-  //         this.animationClass = 'animate-fade-zoom-out';
-  //       }
-  //     },
-  //     { threshold: 0.3 }
-  //   );
-
-  //   observer.observe(this.sectionEl.nativeElement);
-  // }
   @ViewChildren('sectionEl') sections!: QueryList<ElementRef>;
   animationClasses: string[] = [];
 

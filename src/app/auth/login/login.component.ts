@@ -6,10 +6,18 @@ import { FormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-
+import { NavbarComponent } from '../../layout/navbar/navbar.component';
+import { FooterComponent } from '../../layout/footer/footer.component';
 @Component({
   selector: 'app-login',
-  imports: [InputTextModule, ButtonModule, PasswordModule, FormsModule],
+  imports: [
+    InputTextModule,
+    ButtonModule,
+    PasswordModule,
+    FormsModule,
+    NavbarComponent,
+    FooterComponent,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })

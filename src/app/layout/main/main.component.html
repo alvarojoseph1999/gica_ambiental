@@ -1,0 +1,41 @@
+<!-- <ng-container *ngIf="!isDashboard && showNav">
+  <app-navbar />
+</ng-container>
+
+<div *ngIf="isLoading && !isDashboard && showNav" class="loading-screen">
+  <app-loading></app-loading>
+</div>
+
+<ng-container *ngIf="!isLoading">
+  <div [ngClass]="[showNav ? 'with-navbar' : 'no-navbar', getMarginTopClass()]">
+    <router-outlet></router-outlet>
+  </div>
+
+  <ng-container *ngIf="!isDashboard">
+    <app-footer />
+  </ng-container>
+</ng-container> -->
+
+<ng-container *ngIf="!isDashboard && showNav">
+  <!-- Mostrar el navbar cuando no estamos en el Dashboard -->
+  <app-navbar />
+</ng-container>
+
+<div *ngIf="isLoading && !isDashboard && showNav" class="loading-screen">
+  <!-- Mostrar la pantalla de carga cuando no estamos en el Dashboard -->
+  <app-loading></app-loading>
+</div>
+
+<ng-container *ngIf="!isLoading">
+  <!-- Si no estamos cargando, aplicar clases dependiendo de si hay navbar o no -->
+  <div [ngClass]="{ 'mt-0': isHome, 'mt-24': !isHome }">
+    <router-outlet></router-outlet>
+  </div>
+
+  <ng-container *ngIf="!isDashboard">
+    <!-- Mostrar el footer solo si no estamos en el Dashboard -->
+    <app-footer />
+  </ng-container>
+</ng-container>
+
+<!-- <div [ngClass]="[showNav ? 'with-navbar' : 'no-navbar', getMarginTopClass()]"> -->

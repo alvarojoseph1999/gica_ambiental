@@ -21,23 +21,26 @@
 <!-- Navbar siempre visible -->
 <!-- Navbar (siempre visible excepto en dashboard) -->
 <!-- ! ME QUEDE AQUI LO CUAL RECOMEINDA CREAR LAYOUT Y DEJAR SOLO EL ROUTER OUTLET -->
+<!--
 <ng-container *ngIf="!isDashboard && showNav">
   <app-navbar />
 </ng-container>
 
-<!-- Loading Screen -->
+ Loading Screen 
 <div *ngIf="isLoading && !isDashboard && showNav" class="loading-screen">
   <app-loading></app-loading>
 </div>
 
-<!-- Contenido de la página -->
+ Contenido de la página 
 <ng-container *ngIf="!isLoading">
   <div [ngClass]="[showNav ? 'with-navbar' : 'no-navbar', getMarginTopClass()]">
     <router-outlet></router-outlet>
   </div>
 
-  <!-- Footer -->
+   Footer 
   <ng-container *ngIf="!isDashboard">
     <app-footer />
   </ng-container>
-</ng-container>
+</ng-container>-->
+
+<router-outlet></router-outlet>
