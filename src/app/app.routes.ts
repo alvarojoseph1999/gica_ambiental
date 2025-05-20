@@ -25,21 +25,7 @@ export const routes: Routes = [
     path: '**',
     redirectTo: '',
   },
-  // {
-  //   path: 'dashboard',
-  //   loadComponent: () => import('./dashboard/dashboard.component'),
-  //   data: { layout: 'no-navbar-footer' },
-  // },
   // mapa de calor, CHM Data viewer, np https://www.lufft.com/products/accessories-310/chm-data-viewer-software-1922/
-  // {
-  //   path: 'clima',
-  //   loadComponent: () => import('./gica/clima/clima.component'),
-  // },
-  // {
-  //   path: '',
-  //   redirectTo: 'login',
-  //   pathMatch: 'full',
-  // },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

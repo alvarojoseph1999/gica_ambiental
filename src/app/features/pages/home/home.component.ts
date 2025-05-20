@@ -12,43 +12,32 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { ChartModule } from 'primeng/chart';
 import { Router } from '@angular/router';
+import { TeamCardComponent } from '../../../layout/team-card/team-card.component';
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, CardModule, ButtonModule, ChartModule],
+  imports: [
+    CommonModule,
+    CardModule,
+    ButtonModule,
+    ChartModule,
+    TeamCardComponent,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export default class HomeComponent implements AfterViewInit {
-  irADetalle() {
-    this.router.navigate(['/equipotrabajo']);
-  }
+  chartData: any;
+  chartOptions: any;
   titulo = 'HOLA MUNDO';
   subtitulo = 'HOLA';
   isMobileMenuOpen = false;
 
+  irADetalle() {
+    this.router.navigate(['/equipotrabajo']);
+  }
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
-  teamMembers = [
-    {
-      name: 'Ambienta Ambiental',
-      role: 'Lorem ipsum dolor sit amet',
-      image: 'assets/Investigador.jpg',
-    },
-    {
-      name: 'Ambienta Ambiental',
-      role: 'Lorem ipsum dolor sit amet',
-      image: 'assets/Investigador.jpg',
-    },
-    {
-      name: 'Ambienta Ambiental',
-      role: 'Lorem ipsum dolor sit amet',
-      image: 'assets/Investigador.jpg',
-    },
-  ];
-
-  chartData: any;
-  chartOptions: any;
 
   news = [
     {
@@ -109,23 +98,39 @@ export default class HomeComponent implements AfterViewInit {
       },
     };
   }
-  @ViewChildren('sectionEl') sections!: QueryList<ElementRef>;
-  animationClasses: string[] = [];
+
+  // Usa múltiples ViewChildren para diferentes secciones
+  @ViewChildren('animElement') animElements!: QueryList<ElementRef>;
 
   ngAfterViewInit(): void {
-    this.sections.forEach((section, index) => {
-      this.animationClasses[index] = 'opacity-0';
+    this.setupAnimations();
+  }
+
+  setupAnimations(): void {
+    this.animElements.forEach((element) => {
+      const animationClass =
+        element.nativeElement.getAttribute('data-animation') || '';
+
+      // Agrega la clase inicial para que el elemento esté oculto antes de animarse
+      element.nativeElement.classList.add(
+        'opacity-0',
+        'scale-95',
+        'transition-all',
+        'duration-500'
+      );
 
       const observer = new IntersectionObserver(
         ([entry]) => {
-          this.animationClasses[index] = entry.isIntersecting
-            ? 'animate-fade-zoom-in'
-            : 'animate-fade-zoom-out';
+          if (entry.isIntersecting) {
+            element.nativeElement.classList.remove('opacity-0', 'scale-95');
+            element.nativeElement.classList.add(animationClass);
+            observer.unobserve(entry.target); // Detenemos la observación
+          }
         },
-        { threshold: 0.3 }
+        { threshold: 0.2 }
       );
 
-      observer.observe(section.nativeElement);
+      observer.observe(element.nativeElement);
     });
   }
 }

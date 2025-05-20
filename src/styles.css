@@ -37,42 +37,6 @@ body {
   }
 }
 
-/* Cambiar para blanco  */
-/* @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    @apply border-gray-200; 
-  }
-  button:not(:disabled),
-  [role="button"]:not(:disabled) {
-    cursor: pointer;
-  }
-  body {
-    @apply relative text-base font-normal font-outfit z-1 bg-gray-50;
-  }
-} */
-
-/* Cambia de color el logo img de sidebar */
-
-/* .filter-blue {
-  filter: brightness(0) saturate(100%) invert(23%) sepia(99%) saturate(648%)
-    hue-rotate(188deg) brightness(96%) contrast(93%);
-}
-
-.filter-gray {
-  filter: brightness(0) saturate(100%) invert(74%) sepia(0%) saturate(0%)
-    hue-rotate(163deg) brightness(91%) contrast(86%);
-}
-
-.group-hover\:filter-blue-hover:hover {
-  filter: brightness(0) saturate(100%) invert(41%) sepia(83%) saturate(434%)
-    hue-rotate(189deg) brightness(100%) contrast(93%);
-} */
-/* HASTA AQUI */
-
 @layer custom-utilities {
   .menu-item {
     position: relative;
@@ -306,20 +270,5 @@ body {
     background-color: var(
       --color-gray-700
     ); /* Usamos un color gray de tu paleta */
-  }
-
-  /* body.with-navbar {
-    padding-top: 0px;
-  }
-
-  body.no-navbar {
-    padding-top: 50px;
-  } */
-  .mt-0 {
-    margin-top: 0px;
-  }
-
-  .mt-50 {
-    margin-top: 80px;
   }
 }

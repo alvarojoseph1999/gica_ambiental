@@ -1,21 +1,3 @@
-<!-- <ng-container *ngIf="!isDashboard && showNav">
-  <app-navbar />
-</ng-container>
-
-<div *ngIf="isLoading && !isDashboard && showNav" class="loading-screen">
-  <app-loading></app-loading>
-</div>
-
-<ng-container *ngIf="!isLoading">
-  <div [ngClass]="[showNav ? 'with-navbar' : 'no-navbar', getMarginTopClass()]">
-    <router-outlet></router-outlet>
-  </div>
-
-  <ng-container *ngIf="!isDashboard">
-    <app-footer />
-  </ng-container>
-</ng-container> -->
-
 <ng-container *ngIf="!isDashboard && showNav">
   <!-- Mostrar el navbar cuando no estamos en el Dashboard -->
   <app-navbar />
@@ -37,5 +19,3 @@
     <app-footer />
   </ng-container>
 </ng-container>
-
-<!-- <div [ngClass]="[showNav ? 'with-navbar' : 'no-navbar', getMarginTopClass()]"> -->

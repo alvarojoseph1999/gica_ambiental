@@ -1,7 +1,5 @@
 <main class="flex-grow w-full m-0 p-0">
-  <!-- <section
-    class="relative w-full h-[90vh] sm:h-[85vh] md:h-[550px] flex items-center justify-center overflow-hidden"
-  > -->
+  <!-- Inicio imagen -->
   <section
     class="relative w-full flex items-center justify-center overflow-hidden"
     style="min-height: calc(100vh - 80px)"
@@ -23,20 +21,17 @@
   <!-- Nosotros  -->
   <section
     class="flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 mt-5 mb-5 transition-all duration-500"
-    #sectionEl
-    [ngClass]="animationClasses[0]"
   >
     <div
-      class="w-full max-w-7xl mx-auto p-4 sm:p-6 md:p-8 bg-white rounded-lg shadow-md"
+      class="w-full max-w-7xl mx-auto p-4 sm:p-6 md:p-8 rounded-lg shadow-md bg-white"
     >
-      <!-- Sección principal con texto e imagen -->
-      <div class="grid md:grid-cols-2 grid-cols-1 gap-10 items-center">
-        <!-- Texto -->
-        <div>
+      <div class="grid md:grid-cols-2 items-center bg-white px-10 py-10">
+        <div #animElement data-animation="animate-fade-zoom-in-left">
           <p
             class="font-semibold tracking-wide uppercase flex items-center text-sm sm:text-base"
           >
-            <span class="w-6 h-[2px] sm:w-8 bg-black mr-2"></span> NOSOTROS
+            <span class="w-6 h-[2px] sm:w-8 bg-black mr-2"></span>
+            NOSOTROS
           </p>
 
           <h1
@@ -48,11 +43,13 @@
 
           <p class="text-gray-600 mt-4 text-sm sm:text-base">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros elementum tristique.
+            varius enim in eros elementum tristique. adipiscing elit.
+            Suspendisse varius enim in eros elementum tristique.
           </p>
           <p class="text-gray-600 mt-2 text-sm sm:text-base">
             Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
-            commodo diam libero vitae erat.
+            commodo diam libero vitae erat. adipiscing elit. Suspendisse varius
+            enim in eros elementum tristique.
           </p>
 
           <button
@@ -62,8 +59,11 @@
           </button>
         </div>
 
-        <!-- Imagen -->
-        <div class="relative flex justify-center">
+        <div
+          class="relative flex justify-center"
+          #animElement
+          data-animation="animate-fade-zoom-in-right"
+        >
           <img
             src="assets/logo_gica.jpg"
             alt=""
@@ -72,8 +72,7 @@
         </div>
       </div>
 
-      <!-- Sección de Auspiciadores -->
-      <div class="mt-10">
+      <div #animElement data-animation="animate-fade-zoom-in-up">
         <p
           class="text-gray-500 font-semibold uppercase tracking-wide flex items-center text-sm sm:text-base"
         >
@@ -82,7 +81,6 @@
         </p>
 
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-4">
-          <!-- Repetir esto para cada auspiciador -->
           <div
             class="flex flex-col items-center md:flex-row md:items-center text-center md:text-left"
           >
@@ -147,105 +145,77 @@
       </div>
     </div>
   </section>
-  <!-- QUIENES SOMOS -->
-  <!-- <section
-    class="flex items-center justify-center min-h-screen bg-azul_primary mt-10"
+
+  <section
+    class="h-full py-4 px-4 mb-10 mt-20 mx-auto sm:px-6 lg:px-8 xl:w-[1320px] md:flex md:justify-center lg:flex-col celular:bg-red-500"
   >
-    <div class="w-full max-w-7xl mx-auto p-4 sm:p-6 md:p-8">
-      <div
-        class="grid md:grid-cols-2 gap-10 items-center transition-all duration-500"
-        #sectionEl
-        [ngClass]="animationClasses[1]"
-      >
-        
-        <div>
-          <h2
-            class="font-semibold tracking-wide uppercase flex items-center text-sm sm:text-base"
+    <div
+      class="flex flex-col lg:flex-row gap-16 items-start relative mx-auto space-y-5 pt-5"
+    >
+      <div class="flex flex-col lg:flex-row gap-8">
+        <div class="relative w-[660px] h-[645px]">
+          <img
+            src="assets/gicaunam.png"
+            alt="Main Forest Image"
+            class="main-image h-full rounded-xl shadow-lg"
+          />
+          <div
+            class="md:block lg:block sm:hidden absolute top-14 -left-32 w-[200px] h-[184px] rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:-translate-y-2 hover:scale-105 floating-image"
           >
-            <span class="w-8 h-[2px] bg-black mr-2"></span> Quienes somos
-          </h2>
-
-          <div class="md:ml-10 mt-4 md:mt-0 text-center md:text-left">
-            <h1
-              class="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight"
-            >
-              Nosotros somos un grupo <br class="hidden sm:block" />
-              de jóvenes investigadores
-            </h1>
-            <p class="text-gray-600 mt-4 text-base sm:text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique.
-            </p>
+            <img
+              src="assets/gicaunam.png"
+              alt="Side Image 1"
+              class="w-full h-full rounded-xl"
+            />
           </div>
-
-       
-          <div class="mt-6 space-y-4 border-l-2 border-gray-500 pl-4">
-            <div class="flex items-start">
-              <span
-                class="bg-green-500 w-4 h-4 rounded-md mt-1 shrink-0"
-              ></span>
-              <div class="ml-4">
-                <p class="font-semibold text-gray-900">Ambiental</p>
-                <p class="text-gray-600">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <span
-                class="bg-green-500 w-4 h-4 rounded-md mt-1 shrink-0"
-              ></span>
-              <div class="ml-4">
-                <p class="font-semibold text-gray-900">Ambiental</p>
-                <p class="text-gray-600">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <span
-                class="bg-green-500 w-4 h-4 rounded-md mt-1 shrink-0"
-              ></span>
-              <div class="ml-4">
-                <p class="font-semibold text-gray-900">Ambiental</p>
-                <p class="text-gray-600">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-              </div>
-            </div>
+          <div
+            class="md:block lg:block sm:hidden absolute bottom-14 -right-20 w-[200px] h-[184px] rounded-xl shadow-lg overflow-hidden transition duration-300 transform hover:-translate-y-2 hover:scale-105 floating-image"
+          >
+            <img
+              src="assets/gicaunam.png"
+              alt="Side Image 2"
+              class="w-full h-full rounded-xl"
+            />
           </div>
         </div>
-
-       
-        <div class="flex justify-center mt-8 md:mt-0">
-          <img
-            src="assets/logo_gica.jpg"
-            alt="Logo del grupo"
-            class="w-4/5 max-w-xs sm:max-w-md md:max-w-full rounded-lg shadow-lg"
-          />
+        <div
+          class="w-[560px] h-auto px-4 lg:px-8 flex flex-col justify-center overflow-y-auto ml-20"
+        >
+          <h4 class="text-green-600 text-lg font-semibold">Nosotros</h4>
+          <h1 class="text-4xl font-bold leading-tight mt-2">
+            Nosotros somos <br />ambientalistas
+          </h1>
+          <p class="text-gray-700 mt-4">
+            Throughout human history, our relationship with the soil has
+            affected our ability to cultivate crops and influenced the success
+            of civilizations. This relationship between humans, the earth, and
+            food sources affirms soil as the foundation of agriculture.
+          </p>
+          <ul class="mt-4 space-y-2">
+            <li>✔️ Mistakes To Avoid to the dummy printing has bees ind.</li>
+            <li>✔️ Your Startup industry standard lorem saum.</li>
+            <li>✔️ Knew About Fonts text the printing and something do.</li>
+          </ul>
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
+  <!-- QUIENES SOMOS -->
   <section
-    class="flex items-center justify-center bg-azul_primary mt-10 rounded-2xl shadow-xl"
+    class="flex items-center justify-center mt-20 rounded-2xl shadow-xl max-w-7xl mx-auto transition-all duration-500"
   >
-    <div class="w-full max-w-7xl mx-auto p-4 sm:p-6 md:p-8">
-      <div
-        class="grid md:grid-cols-2 gap-10 items-center transition-all duration-500 bg-white px-10 py-10 rounded-2xl shadow-xl"
-        #sectionEl
-        [ngClass]="animationClasses[1]"
-      >
-        <!-- Texto -->
-        <div>
+    <div
+      class="w-full max-w-7xl mx-auto p-4 sm:p-6 md:p-8 rounded-lg shadow-md bg-white"
+    >
+      <div class="grid md:grid-cols-2 items-center bg-white px-10 py-10">
+        <div #animElement data-animation="animate-fade-zoom-in-left">
           <h2
-            class="font-semibold tracking-wide uppercase flex items-center text-sm sm:text-base"
+            class="font-semibold tracking-wide uppercase flex items-center text-sm sm:text-base text-green-600"
           >
-            <span class="w-8 h-[2px] bg-black mr-2"></span> Quienes somos
+            Quienes somos
           </h2>
-
-          <div class="md:ml-10 mt-4 md:mt-0 text-center md:text-left">
+          <div class="md:ml-0 mt-4 md:mt-3 text-center md:text-left">
             <h1
               class="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight"
             >
@@ -257,47 +227,23 @@
               Suspendisse varius enim in eros elementum tristique.
             </p>
           </div>
-
-          <!-- Lista de características -->
-          <div class="mt-6 space-y-4 border-l-2 border-gray-500 pl-4">
+          <div class="py-3">
             <div class="flex items-start">
-              <span
-                class="bg-green-500 w-4 h-4 rounded-md mt-1 shrink-0"
-              ></span>
-              <div class="ml-4">
-                <p class="font-semibold text-gray-900">Ambiental</p>
-                <p class="text-gray-600">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <span
-                class="bg-green-500 w-4 h-4 rounded-md mt-1 shrink-0"
-              ></span>
-              <div class="ml-4">
-                <p class="font-semibold text-gray-900">Ambiental</p>
-                <p class="text-gray-600">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-              </div>
-            </div>
-            <div class="flex items-start">
-              <span
-                class="bg-green-500 w-4 h-4 rounded-md mt-1 shrink-0"
-              ></span>
-              <div class="ml-4">
-                <p class="font-semibold text-gray-900">Ambiental</p>
-                <p class="text-gray-600">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-              </div>
+              <ul class="mt-4 space-y-2">
+                <li>
+                  ✔️ Mistakes To Avoid to the dummy printing has bees ind.
+                </li>
+                <li>✔️ Your Startup industry standard lorem saum.</li>
+                <li>✔️ Knew About Fonts text the printing and something do.</li>
+              </ul>
             </div>
           </div>
         </div>
-
-        <!-- Imagen -->
-        <div class="flex justify-center mt-8 md:mt-0">
+        <div
+          class="flex justify-center mt-8 md:mt-0"
+          #animElement
+          data-animation="animate-fade-zoom-in-right"
+        >
           <img
             src="assets/logo_gica.jpg"
             alt="Logo del grupo"
@@ -309,52 +255,69 @@
   </section>
 
   <!-- Equipo de Investigadores -->
-  <section class="w-full max-w-7xl mx-auto px-4 md:px-8 py-12 mb-5 mt-6">
-    <div class="w-full max-w-6xl mx-auto">
-      <!-- Título -->
-      <h2 class="font-semibold tracking-wide uppercase flex items-center">
-        <span class="w-8 h-[2px] bg-black mr-2 -ml-2"></span>
-        Equipo
-      </h2>
-      <h1 class="text-4xl font-bold text-gray-900 mb-7 ml-10 mt-4">
+  <section
+    class="w-full max-w-8xl mx-auto px-4 md:px-8 py-10 mb-5 mt-24 bg-[#f8f7f0] h-[790px]"
+  >
+    <div class="text-center">
+      <h1 class="text-4xl font-bold text-gray-900 mt-16">
         Nuestro Equipo de Investigadores
       </h1>
-
-      <!-- Grid Responsivo -->
-      <div
-        class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center"
+    </div>
+    <div class="flex flex-wrap justify-center gap-8 p-8">
+      <app-team-card
+        imageUrl="assets/Investigador.jpg"
+        name="James Liam"
+        role="CEO & Founder"
+        [socialLinks]="[
+          { icon: '/assets/facebook.png', url: 'https://facebook.com' },
+          { icon: '/assets/twitter.png', url: 'https://twitter.com' },
+          { icon: '/assets/linkedin.png', url: 'https://linkedin.com' },
+          { icon: '/assets/instagram.png', url: 'https://instagram.com' }
+        ]"
       >
-        <!-- Tarjeta de miembro -->
-        <p-card
-          *ngFor="let member of teamMembers"
-          class="relative shadow-lg overflow-hidden flex items-end text-white border-none rounded-lg cursor-pointer"
-          [ngStyle]="{ width: '100%', maxWidth: '350px', height: '421px' }"
-          (click)="irADetalle()"
-        >
-          <!-- Imagen de fondo -->
-          <div
-            class="absolute inset-0 bg-cover bg-center"
-            [ngStyle]="{
-              'background-image': 'url(' + member.image + ')',
-              'background-size': 'cover',
-              'background-position': 'center'
-            }"
-          >
-            <!-- Capa oscura -->
-            <div
-              class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"
-            ></div>
-          </div>
+      </app-team-card>
 
-          <!-- Contenido -->
-          <div class="relative z-10 p-6 text-center w-full">
-            <h3 class="font-bold text-xl text-white">{{ member.name }}</h3>
-            <p class="text-gray-300 text-lg">{{ member.role }}</p>
-          </div>
-        </p-card>
-      </div>
+      <app-team-card
+        imageUrl="assets/Investigador.jpg"
+        name="Rock Sophia"
+        role="Worker"
+        [socialLinks]="[
+          { icon: '/assets/facebook.png', url: 'https://facebook.com' },
+          { icon: '/assets/twitter.png', url: 'https://twitter.com' },
+          { icon: '/assets/linkedin.png', url: 'https://linkedin.com' },
+          { icon: '/assets/instagram.png', url: 'https://instagram.com' }
+        ]"
+      >
+      </app-team-card>
+
+      <app-team-card
+        imageUrl="assets/Investigador.jpg"
+        name="Jack Jayden"
+        role="Worker"
+        [socialLinks]="[
+          { icon: '/assets/facebook.png', url: 'https://facebook.com' },
+          { icon: '/assets/twitter.png', url: 'https://twitter.com' },
+          { icon: '/assets/linkedin.png', url: 'https://linkedin.com' },
+          { icon: '/assets/instagram.png', url: 'https://instagram.com' }
+        ]"
+      >
+      </app-team-card>
+
+      <app-team-card
+        imageUrl="assets/Investigador.jpg"
+        name="Ava Emma"
+        role="Worker"
+        [socialLinks]="[
+          { icon: '/assets/facebook.png', url: 'https://facebook.com' },
+          { icon: '/assets/twitter.png', url: 'https://twitter.com' },
+          { icon: '/assets/linkedin.png', url: 'https://linkedin.com' },
+          { icon: '/assets/instagram.png', url: 'https://instagram.com' }
+        ]"
+      >
+      </app-team-card>
     </div>
   </section>
+
   <!-- SECCIÓN INVESTIGACIONES GRÁFICAS -->
   <section class="w-full max-w-7xl mx-auto p-8 bg-white">
     <div class="space-y-12">

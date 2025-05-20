@@ -3,20 +3,46 @@
     <div class="col-span-12 space-y-6 xl:col-span-12 md:row-span-4">
       <div class="col-span-12 space-y-6 xl:col-span-6">
         <app-metric-group01></app-metric-group01>
-        <!-- <app-chart01></app-chart01> -->
       </div>
-      <!-- <div class="col-span-12 xl:col-span-5">
-        <app-chart02></app-chart02>
+
+      <div class="grid grid-cols-2 gap-4">
+        <!-- <app-chart02></app-chart02> -->
+        <!-- <app-chart01></app-chart01>
+
+        <app-chart02></app-chart02> -->
+        <div class="card rounded-2xl border p-4">
+          <p-chart
+            type="line"
+            [data]="data"
+            [options]="options"
+            class="h-[30rem]"
+          />
+        </div>
+        <div class="card">
+          <p-chart
+            type="bar"
+            [data]="data"
+            [options]="options"
+            class="h-[30rem]"
+          />
+        </div>
+        <div class="card">
+          <p-chart
+            type="bar"
+            [data]="data"
+            [options]="options"
+            class="h-[30rem]"
+          />
+        </div>
+        <div class="card">
+          <p-chart
+            type="line"
+            [data]="data"
+            [options]="options"
+            class="h-[30rem]"
+          />
+        </div>
       </div>
-      <div class="col-span-12">
-        <app-chart03></app-chart03>
-      </div>
-      <div class="col-span-12 xl:col-span-5">
-        <app-map01></app-map01>
-      </div>
-      <div class="col-span-12 xl:col-span-7">
-        <app-table01></app-table01>
-      </div> -->
     </div>
   </div>
 </div>
