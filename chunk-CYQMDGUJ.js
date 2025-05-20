@@ -1,0 +1,1 @@
+import{Jb as s,Xa as n,pb as a,qb as p}from"./chunk-PRUAM7MN.js";import"./chunk-7CGTOI24.js";var t=class o{static \u0275fac=function(e){return new(e||o)};static \u0275cmp=n({type:o,selectors:[["app-about"]],decls:2,vars:0,template:function(e,m){e&1&&(a(0,"p"),s(1,"about works!"),p())},encapsulation:2})};export{t as default};
