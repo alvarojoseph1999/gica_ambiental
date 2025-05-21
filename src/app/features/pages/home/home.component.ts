@@ -12,6 +12,7 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { ChartModule } from 'primeng/chart';
 import { Router } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { TeamCardComponent } from '../../../layout/team-card/team-card.component';
 @Component({
   selector: 'app-home',

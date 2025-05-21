@@ -10,7 +10,8 @@
 
 <ng-container *ngIf="!isLoading">
   <!-- Si no estamos cargando, aplicar clases dependiendo de si hay navbar o no -->
-  <div [ngClass]="{ 'mt-0': isHome, 'mt-24': !isHome }">
+  <!-- <div [ngClass]="{ 'mt-0': isHome, 'mt-24': !isHome }"> -->
+  <div>
     <router-outlet></router-outlet>
   </div>
 
